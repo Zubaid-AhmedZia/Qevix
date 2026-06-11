@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620" role="img" aria-labelledby="title desc">
+  <title id="title">QevixAi product snapshot</title>
+  <desc id="desc">A clean product interface showing a live call transcript, booking details, and team handoff summary.</desc>
+  <rect width="960" height="620" rx="18" fill="#f7f8fb"/>
+  <rect x="46" y="42" width="868" height="536" rx="16" fill="#ffffff" stroke="#d7dee8" stroke-width="2"/>
+  <rect x="46" y="42" width="868" height="70" rx="16" fill="#f9fbfd"/>
+  <rect x="46" y="96" width="868" height="16" fill="#f9fbfd"/>
+  <circle cx="86" cy="77" r="8" fill="#176b87"/>
+  <rect x="108" y="66" width="170" height="22" rx="6" fill="#dfeaf0"/>
+  <rect x="738" y="64" width="128" height="26" rx="13" fill="#e7f4ef"/>
+  <circle cx="760" cy="77" r="6" fill="#16815f"/>
+  <rect x="774" y="69" width="70" height="16" rx="4" fill="#bfe3d4"/>
+  <rect x="80" y="146" width="500" height="276" rx="12" fill="#ffffff" stroke="#d7dee8" stroke-width="2"/>
+  <rect x="106" y="174" width="88" height="16" rx="4" fill="#9aa7b5"/>
+  <rect x="106" y="204" width="412" height="18" rx="5" fill="#e7edf3"/>
+  <rect x="106" y="232" width="350" height="18" rx="5" fill="#e7edf3"/>
+  <rect x="106" y="286" width="88" height="16" rx="4" fill="#176b87"/>
+  <rect x="106" y="316" width="404" height="18" rx="5" fill="#d9edf3"/>
+  <rect x="106" y="344" width="386" height="18" rx="5" fill="#d9edf3"/>
+  <rect x="620" y="146" width="260" height="126" rx="12" fill="#fff4e8" stroke="#f0c89c" stroke-width="2"/>
+  <rect x="646" y="174" width="142" height="18" rx="5" fill="#c97b3a"/>
+  <rect x="646" y="208" width="184" height="16" rx="4" fill="#edd3ba"/>
+  <rect x="646" y="234" width="152" height="16" rx="4" fill="#edd3ba"/>
+  <rect x="620" y="296" width="260" height="126" rx="12" fill="#ffffff" stroke="#d7dee8" stroke-width="2"/>
+  <rect x="646" y="324" width="126" height="18" rx="5" fill="#101828"/>
+  <rect x="646" y="358" width="190" height="16" rx="4" fill="#e7edf3"/>
+  <rect x="646" y="384" width="154" height="16" rx="4" fill="#e7edf3"/>
+  <rect x="80" y="454" width="800" height="72" rx="12" fill="#f9fbfd" stroke="#d7dee8" stroke-width="2"/>
+  <rect x="112" y="482" width="150" height="18" rx="9" fill="#d9edf3"/>
+  <rect x="292" y="482" width="152" height="18" rx="9" fill="#e7f4ef"/>
+  <rect x="474" y="482" width="150" height="18" rx="9" fill="#fff4e8"/>
+  <rect x="654" y="482" width="154" height="18" rx="9" fill="#e7edf3"/>
+</svg>
