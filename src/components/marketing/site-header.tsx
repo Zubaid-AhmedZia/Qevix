@@ -1,18 +1,16 @@
 import Link from "next/link";
 import { CalendarCheck, PlayCircle } from "lucide-react";
+import { QevixLogo } from "@/components/brand/qevix-logo";
 import { MobileNav } from "@/components/marketing/mobile-nav";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { ButtonLink } from "@/components/ui/button";
 import { primaryNav } from "@/content/navigation";
-import { siteConfig } from "@/content/site";
 
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <div className="container header-inner">
-        <Link className="brand" href="/" aria-label="QevixAi home">
-          <span className="brand-mark">Q</span>
-          <span>{siteConfig.name}</span>
-        </Link>
+      <div className="header-inner">
+        <QevixLogo />
 
         <nav className="desktop-nav" aria-label="Primary navigation">
           {primaryNav.map((item) => (
@@ -23,6 +21,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="header-ctas">
+          <ThemeToggle />
           <ButtonLink
             href="/#demo"
             variant="secondary"
@@ -30,7 +29,7 @@ export function SiteHeader() {
             showArrow={false}
           >
             <PlayCircle aria-hidden="true" size={17} />
-            See live demo
+            See automation
           </ButtonLink>
           <ButtonLink
             href="/book-demo"

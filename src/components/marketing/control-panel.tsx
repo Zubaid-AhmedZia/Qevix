@@ -1,76 +1,71 @@
-import { CheckCircle2, Settings2 } from "lucide-react";
+import { CheckCircle2, SlidersHorizontal } from "lucide-react";
+import { Reveal } from "@/components/motion/reveal";
 import { ButtonLink } from "@/components/ui/button";
 import { controlFeatures } from "@/content/site";
 
 export function ControlPanel() {
   return (
-    <section className="section">
-      <div className="container">
-        <div className="control-grid">
-          <div>
-            <p className="section-kicker">Control and transparency</p>
-            <h2 className="section-heading">
-              You stay in control. QevixAi does the repetitive work.
-            </h2>
-            <p className="section-lede">
-              Set business hours, define when calls are transferred, review conversation
-              summaries, and refine what the AI should answer on its own.
-            </p>
+    <section className="section control-section">
+      <div className="container control-grid">
+        <Reveal>
+          <p className="section-kicker">Control and transparency</p>
+          <h2 className="section-heading">
+            Automation should feel powerful, not mysterious.
+          </h2>
+          <p className="section-lede">
+            You decide what the system can answer, where leads go, when humans step in,
+            and how follow-up should continue after the first conversation.
+          </p>
 
-            <ul className="control-list">
-              {controlFeatures.map((feature) => (
-                <li key={feature}>
-                  <CheckCircle2 aria-hidden="true" size={18} className="positive" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
+          <ul className="control-list">
+            {controlFeatures.map((feature) => (
+              <li key={feature}>
+                <CheckCircle2 aria-hidden="true" size={18} />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
 
-            <div className="button-row hero-actions">
-              <ButtonLink
-                href="/contact"
-                variant="secondary"
-                eventName="contact_cta_click"
-              >
-                Contact sales
-              </ButtonLink>
-            </div>
+          <div className="button-row hero-actions">
+            <ButtonLink href="/contact" variant="secondary" eventName="contact_cta_click">
+              Contact sales
+            </ButtonLink>
           </div>
+        </Reveal>
 
-          <div className="admin-panel" aria-label="QevixAi admin controls mockup">
-            <div className="mock-toolbar">
-              <span>Admin controls</span>
-              <Settings2 aria-hidden="true" size={18} />
+        <div className="admin-panel" aria-label="QevixAi automation control mockup">
+          <div className="mock-toolbar">
+            <span>Automation command center</span>
+            <SlidersHorizontal aria-hidden="true" size={18} />
+          </div>
+          <div className="admin-panel-body">
+            <div className="setting-row">
+              <div>
+                <strong>Voice agent scope</strong>
+                <span>Answer bookings, FAQs, and lead intake</span>
+              </div>
+              <span className="toggle" aria-hidden="true" />
             </div>
-            <div className="admin-panel-body">
-              <div className="setting-row">
-                <div>
-                  <strong>After-hours coverage</strong>
-                  <span>Route missed calls to QevixAi</span>
-                </div>
-                <span className="toggle" aria-hidden="true" />
+            <div className="setting-row">
+              <div>
+                <strong>Follow-up sequence</strong>
+                <span>Send missed-call text and booking reminder</span>
               </div>
-              <div className="setting-row">
-                <div>
-                  <strong>Escalation rules</strong>
-                  <span>Transfer urgent calls to the right team</span>
-                </div>
-                <span className="toggle" aria-hidden="true" />
+              <span className="toggle" aria-hidden="true" />
+            </div>
+            <div className="setting-row">
+              <div>
+                <strong>CRM routing</strong>
+                <span>Move qualified leads to review queue</span>
               </div>
-              <div className="setting-row">
-                <div>
-                  <strong>Team notifications</strong>
-                  <span>Send summaries after qualified calls</span>
-                </div>
-                <span className="toggle" aria-hidden="true" />
-              </div>
-              <div className="summary-card">
-                <strong>Latest summary</strong>
-                <p>
-                  Caller requested a new appointment, preferred Friday afternoon, and
-                  asked for parking instructions.
-                </p>
-              </div>
+              <span className="toggle" aria-hidden="true" />
+            </div>
+            <div className="summary-card">
+              <strong>Latest workflow insight</strong>
+              <p>
+                Most after-hours callers ask for availability first. Add that answer to the
+                opening flow and route urgent calls faster.
+              </p>
             </div>
           </div>
         </div>

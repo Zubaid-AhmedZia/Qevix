@@ -5,43 +5,43 @@ export type FaqItem = {
 
 export const faqs: FaqItem[] = [
   {
-    question: "How quickly can QevixAi be set up?",
+    question: "Is QevixAi only an AI receptionist?",
     answer:
-      "Setup depends on the complexity of your call flow. Most businesses can review a working configuration and begin testing once business details, hours, call rules, and booking workflows are provided."
+      "No. Voice agents are the front door, but QevixAi can also connect messaging follow-up, booking rules, CRM routing, team notifications, and workflow reporting."
   },
   {
-    question: "Do I need technical staff to use it?",
+    question: "How does the automation know what to say?",
     answer:
-      "No. QevixAi is built as a business tool. Your team provides business information, routing rules, and booking preferences; the product handles the repetitive call workflow."
+      "It is configured from your approved business information: services, hours, locations, policies, intake questions, escalation rules, and the actions your team wants after each scenario."
   },
   {
-    question: "What happens when the AI cannot handle a call?",
+    question: "Can humans stay in control?",
     answer:
-      "It follows the escalation rules you set. That can mean transferring the call, creating a callback task, or sending the conversation summary to the right person."
+      "Yes. You define what the system can handle, what should be transferred, what should become a callback, and which conversations need human review."
   },
   {
-    question: "Can it answer questions as well as book appointments?",
+    question: "What tools can it connect with?",
     answer:
-      "Yes, when the answers are based on your approved business information, such as hours, services, locations, policies, availability, and intake requirements."
+      "The public site does not claim specific integrations until they are confirmed for your stack. The demo process maps the tools you use and recommends the right connection path."
   },
   {
-    question: "Will it sound natural to callers?",
+    question: "Will callers know they are speaking with automation?",
     answer:
-      "QevixAi is designed to sound conversational and professional while prioritizing clarity, speed, and accurate routing over gimmicky human-imitation claims."
+      "The goal is a clear, professional experience that gets callers helped quickly. QevixAi should not rely on deceptive human imitation or gimmicks."
   },
   {
-    question: "Can it work outside office hours?",
+    question: "What happens after a missed call?",
     answer:
-      "Yes. After-hours coverage is a core use case, so callers can still get answers, share details, request appointments, or be routed for follow-up."
+      "A missed-call workflow can send a follow-up message, collect intent, create a task, route the lead, or guide the person toward booking based on your rules."
   },
   {
-    question: "Can it work for my industry?",
+    question: "Can it work for multiple locations?",
     answer:
-      "It is a strong fit when your business handles repeat call patterns like enquiries, bookings, intake, routing, service questions, or status updates."
+      "Yes. Multi-location workflows can route by location, service line, urgency, team ownership, or campaign source when those rules are defined during setup."
   },
   {
-    question: "How do I get a quote?",
+    question: "How do we get a quote?",
     answer:
-      "Use the demo form with your industry, call volume, and workflow details. QevixAi can then recommend the right setup instead of showing invented public prices."
+      "Use the demo form with your industry, call volume, workflows, and tools. QevixAi can then scope the right automation system instead of showing a one-size-fits-all price."
   }
 ];

@@ -1,28 +1,27 @@
+import { Reveal } from "@/components/motion/reveal";
 import { ButtonLink } from "@/components/ui/button";
 
 export function CTABand() {
   return (
-    <section className="section">
+    <section className="section final-section">
       <div className="container">
-        <div className="cta-band">
-          <h2>Ready to stop losing calls and start capturing more opportunities?</h2>
+        <Reveal className="cta-band">
+          <p className="section-kicker">Ready when you are</p>
+          <h2>Build the system that answers, follows up, books, and routes for you.</h2>
           <p>
-            Book a demo and we will show you how QevixAi would answer calls for your
-            business, route real scenarios, and fit into your current process.
+            Bring one real call flow to the demo. QevixAi will show how the voice agent,
+            message follow-up, CRM routing, and booking logic can work together for your
+            business.
           </p>
           <div className="button-row">
             <ButtonLink href="/book-demo" eventName="demo_cta_click">
               Book a demo
             </ButtonLink>
-            <ButtonLink
-              href="/contact"
-              variant="secondary"
-              eventName="contact_cta_click"
-            >
+            <ButtonLink href="/contact" variant="secondary" eventName="contact_cta_click">
               Contact sales
             </ButtonLink>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

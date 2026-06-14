@@ -5,13 +5,13 @@ import { siteConfig } from "@/content/site";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "QevixAi | AI receptionist for businesses that cannot afford missed calls",
+    default: "QevixAi | AI automation for calls, follow-up, booking, and CRM",
     template: "%s | QevixAi"
   },
   description: siteConfig.description,
   applicationName: "QevixAi",
   openGraph: {
-    title: "QevixAi | Answer every call",
+    title: "QevixAi | Automate calls, follow-up, booking, and CRM",
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: "QevixAi",
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "QevixAi AI receptionist landing page"
+        alt: "QevixAi automation landing page"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "QevixAi | Answer every call",
+    title: "QevixAi | Automate calls, follow-up, booking, and CRM",
     description: siteConfig.description,
     images: ["/opengraph-image"]
   }
@@ -35,8 +35,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var t=localStorage.getItem('qevix-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}"
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

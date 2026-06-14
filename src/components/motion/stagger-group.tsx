@@ -24,7 +24,7 @@ export function StaggerGroup({
       viewport={{ once: true, margin: "-80px" }}
       variants={{
         hidden: {},
-        visible: { transition: { staggerChildren: 0.08 } }
+        visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } }
       }}
     >
       {children}
@@ -54,7 +54,7 @@ export function StaggerItem({
           opacity: 1,
           y: 0,
           scale: 1,
-          transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] }
+          transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] }
         }
       }}
     >

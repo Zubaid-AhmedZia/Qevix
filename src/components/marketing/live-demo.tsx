@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { CalendarCheck, MessageSquareText } from "lucide-react";
+import { CalendarCheck, MessageSquareText, Workflow } from "lucide-react";
+import { Reveal } from "@/components/motion/reveal";
 import { ButtonLink } from "@/components/ui/button";
 import { demoTranscripts } from "@/content/demo-transcripts";
 
@@ -10,17 +11,19 @@ export function LiveDemo() {
   const active = demoTranscripts.find((demo) => demo.id === activeId) ?? demoTranscripts[0];
 
   return (
-    <section className="section" id="demo">
+    <section className="section demo-section" id="demo">
       <div className="container">
-        <p className="section-kicker">Live demo</p>
-        <h2 className="section-heading">See how QevixAi handles a real call.</h2>
-        <p className="section-lede">
-          Transcript-only examples show the day-one product behavior without relying on
-          autoplaying audio or fragile JavaScript-only content.
-        </p>
+        <Reveal>
+          <p className="section-kicker">Live automation</p>
+          <h2 className="section-heading">See the journey from call to workflow.</h2>
+          <p className="section-lede">
+            A good automation system does more than answer. It captures intent, prepares
+            follow-up, updates the pipeline, and tells the team what happened.
+          </p>
+        </Reveal>
 
         <div className="demo-shell">
-          <div className="tab-list" role="tablist" aria-label="Call examples">
+          <div className="tab-list" role="tablist" aria-label="Automation examples">
             {demoTranscripts.map((demo) => (
               <button
                 className="tab-button"
@@ -43,31 +46,32 @@ export function LiveDemo() {
             role="tabpanel"
             aria-labelledby={`${active.id}-tab`}
           >
-            <div className="demo-columns">
-              <div className="transcript-card">
-                <div className="transcript-line">
-                  <span>Caller</span>
-                  <p>{active.caller}</p>
-                </div>
-                <div className="transcript-line">
-                  <span>QevixAi</span>
-                  <p>{active.ai}</p>
-                </div>
+            <div className="demo-conversation">
+              <div className="bubble caller">
+                <span>Caller</span>
+                <p>{active.caller}</p>
               </div>
-
-              <div className="details-grid">
-                {active.details.map((detail) => (
-                  <div className="detail-item" key={detail.label}>
-                    <span>{detail.label}</span>
-                    <strong>{detail.value}</strong>
-                  </div>
-                ))}
+              <div className="bubble ai">
+                <span>QevixAi</span>
+                <p>{active.ai}</p>
               </div>
             </div>
 
-            <div className="booking-card">
-              <strong>Final action</strong>
-              <p>{active.finalAction}</p>
+            <div className="details-grid">
+              {active.details.map((detail) => (
+                <div className="detail-item" key={detail.label}>
+                  <span>{detail.label}</span>
+                  <strong>{detail.value}</strong>
+                </div>
+              ))}
+            </div>
+
+            <div className="final-action">
+              <Workflow aria-hidden="true" size={22} />
+              <div>
+                <strong>Final action</strong>
+                <p>{active.finalAction}</p>
+              </div>
             </div>
           </div>
 
@@ -78,7 +82,7 @@ export function LiveDemo() {
             </ButtonLink>
             <span className="chip">
               <MessageSquareText aria-hidden="true" size={15} />
-              Transcript-only, no autoplay
+              Follow-up path included
             </span>
           </div>
         </div>

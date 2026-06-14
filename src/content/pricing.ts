@@ -2,6 +2,7 @@ export type PricingPlan = {
   id: "starter" | "growth" | "multi-location";
   name: string;
   fit: string;
+  signal: string;
   idealFor: string;
   capabilities: string[];
   support: string;
@@ -11,42 +12,45 @@ export type PricingPlan = {
 export const pricingPlans: PricingPlan[] = [
   {
     id: "starter",
-    name: "Starter",
-    fit: "Single workflow",
-    idealFor: "A focused team that wants missed-call and after-hours coverage for one main process.",
+    name: "Starter AI System",
+    fit: "Fix the biggest leak first",
+    signal: "One core workflow",
+    idealFor:
+      "For businesses that need one high-impact automation live fast: call answering, lead capture, booking, or callback routing.",
     capabilities: [
-      "Call answering and lead capture",
-      "Approved FAQ responses",
-      "Basic booking or callback rules",
-      "Call summaries for your team"
+      "One primary voice or follow-up workflow",
+      "Approved intake prompts and business rules",
+      "Clean team handoff with summaries"
     ],
-    support: "Setup guidance and standard support"
+    support: "Launch review included"
   },
   {
     id: "growth",
-    name: "Growth",
-    fit: "More call volume and richer routing",
-    idealFor: "Growing teams that need qualification, booking, and escalations across more caller types.",
+    name: "Growth Infrastructure",
+    fit: "Connect the full lead journey",
+    signal: "Voice + follow-up + CRM",
+    idealFor:
+      "For teams ready to connect calls, messaging, booking logic, CRM stages, and team notifications into one operating system.",
     capabilities: [
-      "Everything in Starter",
-      "Multiple routing paths",
-      "Expanded intake questions",
-      "Priority refinement reviews"
+      "AI voice agent plus SMS or WhatsApp flow",
+      "Pipeline routing and task automation",
+      "Expanded scenario testing before launch"
     ],
-    support: "Enhanced support for workflow changes",
+    support: "Priority optimization",
     featured: true
   },
   {
     id: "multi-location",
-    name: "Multi-location",
-    fit: "Multiple teams or locations",
-    idealFor: "Organizations that need consistent call handling across locations, teams, or service lines.",
+    name: "Full AI Ecosystem",
+    fit: "Scale across teams or locations",
+    signal: "Multi-flow system",
+    idealFor:
+      "For organizations that need consistent workflows across locations, service lines, campaign funnels, or larger operating teams.",
     capabilities: [
-      "Everything in Growth",
-      "Location-aware routing",
-      "Team notification rules",
-      "Multi-workflow reporting"
+      "Multiple voice, booking, and follow-up paths",
+      "Location-aware routing and ownership rules",
+      "Cross-team visibility and system refinement"
     ],
-    support: "Launch planning and ongoing optimization"
+    support: "Systems review included"
   }
 ];

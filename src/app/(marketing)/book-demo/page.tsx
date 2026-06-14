@@ -5,7 +5,7 @@ import { DemoRequestForm } from "@/components/forms/demo-request-form";
 export const metadata: Metadata = {
   title: "Book a demo",
   description:
-    "Request a QevixAi demo and share your industry, call volume, and current workflow."
+    "Request a QevixAi demo for voice agents, follow-up, booking, CRM, and workflow automation."
 };
 
 const validPlans = new Set(["starter", "growth", "multi-location"]);
@@ -25,18 +25,19 @@ export default async function BookDemoPage({ searchParams }: PageProps) {
         <div>
           <p className="section-kicker">Book a demo</p>
           <h1 className="section-heading">
-            See how QevixAi would answer calls for your business.
+            See how QevixAi can connect voice, follow-up, booking, and CRM.
           </h1>
           <p className="section-lede">
-            Share the basics about your industry, call volume, and current workflow. The
-            demo request routes through a server action with validation and a success page.
+            Share the basics about your industry, call volume, and current customer
+            journey. The demo is scoped around the places where leads slow down, get
+            missed, or need a cleaner handoff.
           </p>
 
           <ul className="control-list hero-actions">
             {[
-              "Plan preselection from pricing buttons",
-              "No fake phone number or copied competitor contact details",
-              "Workflow details used to recommend the right setup"
+              "Map your busiest call and lead paths",
+              "Review booking, follow-up, and handoff rules",
+              "Scope the automation layers that fit your operation"
             ].map((item) => (
               <li key={item}>
                 <CheckCircle2 aria-hidden="true" size={18} className="positive" />

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "QevixAi AI receptionist for businesses that cannot afford missed calls";
+export const alt = "QevixAi AI automation for calls, follow-up, booking, CRM, and workflows";
 export const size = {
   width: 1200,
   height: 630
@@ -18,7 +18,7 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#f7f8fb",
+          background: "#f7f8ff",
           color: "#101828",
           padding: 72,
           fontFamily: "Inter, Arial, sans-serif"
@@ -40,8 +40,8 @@ export default function OpenGraphImage() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              borderRadius: 10,
-              background: "#176b87",
+              borderRadius: 16,
+              background: "#5b5ff5",
               color: "#fff"
             }}
           >
@@ -50,17 +50,17 @@ export default function OpenGraphImage() {
           QevixAi
         </div>
         <div style={{ maxWidth: 920 }}>
-          <div style={{ color: "#176b87", fontSize: 28, fontWeight: 800 }}>
-            AI receptionist for businesses that cannot afford missed calls
+          <div style={{ color: "#5b5ff5", fontSize: 28, fontWeight: 800 }}>
+            AI automation for businesses that cannot afford slow follow-up
           </div>
           <div style={{ marginTop: 22, fontSize: 74, lineHeight: 0.96, fontWeight: 900 }}>
-            Answer every call. Book more appointments. Stay available 24/7.
+            Answer, follow up, book, route, and report from one workflow.
           </div>
         </div>
         <div style={{ display: "flex", gap: 16, color: "#526070", fontSize: 26 }}>
-          <span>No voicemail gaps</span>
-          <span>No complex phone trees</span>
-          <span>No extra reception shift</span>
+          <span>AI voice agents</span>
+          <span>SMS and WhatsApp follow-up</span>
+          <span>CRM visibility</span>
         </div>
       </div>
     ),

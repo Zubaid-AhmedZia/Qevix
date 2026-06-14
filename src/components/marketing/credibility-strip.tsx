@@ -1,17 +1,15 @@
-import { Badge } from "@/components/ui/badge";
-import { credibility } from "@/content/site";
+import { AnimatedTicker } from "@/components/motion/animated-ticker";
+import { Reveal } from "@/components/motion/reveal";
+import { tickerItems } from "@/content/site";
 
 export function CredibilityStrip() {
   return (
-    <section className="credibility" aria-label="QevixAi capabilities and industries">
-      <div className="container credibility-inner">
-        <p className="credibility-copy">{credibility.text}</p>
-        <div className="chip-row" aria-label="QevixAi capabilities">
-          {credibility.chips.map((chip) => (
-            <Badge key={chip}>{chip}</Badge>
-          ))}
-        </div>
-      </div>
+    <section className="ticker-section" aria-label="Automation capabilities">
+      <Reveal className="container ticker-intro">
+        <p className="section-kicker">Built like a growth system</p>
+        <h2>Voice, follow-up, booking, CRM, and reporting working together.</h2>
+      </Reveal>
+      <AnimatedTicker items={tickerItems} />
     </section>
   );
 }

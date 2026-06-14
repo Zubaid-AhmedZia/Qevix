@@ -1,29 +1,49 @@
-import { Building2, CalendarCheck } from "lucide-react";
+import {
+  Building2,
+  CalendarCheck,
+  HeartPulse,
+  Home,
+  Scale,
+  Sparkles,
+  Store,
+  Wrench
+} from "lucide-react";
+import { Reveal } from "@/components/motion/reveal";
+import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 import { ButtonLink } from "@/components/ui/button";
 import { industries } from "@/content/industries";
 
+const icons = [Sparkles, HeartPulse, Building2, Wrench, Home, Scale, Store, Building2];
+
 export function IndustriesGrid() {
   return (
-    <section className="section section-muted" id="industries">
+    <section className="section industries-section" id="industries">
       <div className="container">
-        <p className="section-kicker">Industries</p>
-        <h2 className="section-heading">Built for any business that runs on calls.</h2>
-        <p className="section-lede">
-          Specific workflows make the broad promise believable. QevixAi handles repeat
-          caller patterns across service, appointment, intake, and routing teams.
-        </p>
+        <Reveal>
+          <p className="section-kicker">Industries</p>
+          <h2 className="section-heading">
+            Designed for businesses that care for people and cannot babysit every channel.
+          </h2>
+          <p className="section-lede">
+            QevixAi is strongest where calls, enquiries, bookings, and follow-up repeat
+            every day but still need a professional human-ready handoff.
+          </p>
+        </Reveal>
 
-        <div className="card-grid eight">
-          {industries.map((industry) => (
-            <article className="industry-card" key={industry.title}>
-              <span className="icon-tile">
-                <Building2 aria-hidden="true" size={20} />
-              </span>
-              <h3>{industry.title}</h3>
-              <p>{industry.body}</p>
-            </article>
-          ))}
-        </div>
+        <StaggerGroup className="industry-grid">
+          {industries.map((industry, index) => {
+            const Icon = icons[index] ?? Building2;
+            return (
+              <StaggerItem className="industry-card" key={industry.title}>
+                <span className="icon-tile">
+                  <Icon aria-hidden="true" size={21} />
+                </span>
+                <h3>{industry.title}</h3>
+                <p>{industry.body}</p>
+              </StaggerItem>
+            );
+          })}
+        </StaggerGroup>
 
         <div className="button-row hero-actions">
           <ButtonLink

@@ -6,34 +6,42 @@ export type Industry = {
 export const industries: Industry[] = [
   {
     title: "Dentists",
-    body: "Answer new patient calls, capture treatment interest, and book the next available appointment."
+    body:
+      "Capture new patient calls, route urgent requests, answer location questions, and move qualified patients toward booking."
   },
   {
     title: "Medspas",
-    body: "Handle treatment questions, collect consultation details, and route sensitive calls to staff."
+    body:
+      "Qualify treatment interest, collect consultation details, send follow-up prompts, and protect staff time."
   },
   {
-    title: "Salons",
-    body: "Book services, confirm preferred times, and reduce interruptions during busy appointment blocks."
+    title: "Clinics",
+    body:
+      "Handle common questions, collect intake context, and escalate sensitive calls without leaving callers stranded."
   },
   {
     title: "Home services",
-    body: "Collect job type, location, urgency, and availability before your dispatcher follows up."
+    body:
+      "Capture job type, location, urgency, and photos or notes before dispatch or callback."
   },
   {
-    title: "Property teams",
-    body: "Qualify leasing or maintenance calls and route each conversation to the right next step."
+    title: "Real estate teams",
+    body:
+      "Qualify buyers, sellers, tenants, and tour requests, then route each lead into the right pipeline stage."
   },
   {
     title: "Legal offices",
-    body: "Capture matter type, contact details, and urgency before handing qualified enquiries to intake."
+    body:
+      "Collect matter type, urgency, contact details, and conflict-safe notes before a human reviews the enquiry."
   },
   {
     title: "Restaurants",
-    body: "Answer common questions, collect event enquiries, and route booking requests without phone tag."
+    body:
+      "Answer routine questions, collect event enquiries, and route booking requests during peak service hours."
   },
   {
-    title: "Multi-location businesses",
-    body: "Route callers by location, service need, and team availability from one consistent workflow."
+    title: "Multi-location brands",
+    body:
+      "Keep call handling, follow-up, and CRM routing consistent across locations without hiding local context."
   }
 ];

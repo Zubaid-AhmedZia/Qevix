@@ -1,26 +1,30 @@
 import { ButtonLink } from "@/components/ui/button";
+import { Reveal } from "@/components/motion/reveal";
+import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 import { howItWorks } from "@/content/site";
 
 export function HowItWorks() {
   return (
-    <section className="section" id="how-it-works">
+    <section className="section process-section" id="process">
       <div className="container">
-        <p className="section-kicker">How it works</p>
-        <h2 className="section-heading">Go live in a few simple steps.</h2>
-        <p className="section-lede">
-          A product-focused setup path: connect the call flow, add business rules, test
-          real scenarios, and refine from call insights.
-        </p>
+        <Reveal>
+          <p className="section-kicker">Process</p>
+          <h2 className="section-heading">From messy customer journey to clean automation system.</h2>
+          <p className="section-lede">
+            The goal is not to add random AI features. It is to design a dependable path
+            from first contact to booked appointment, routed lead, or informed follow-up.
+          </p>
+        </Reveal>
 
-        <div className="card-grid four steps-grid">
+        <StaggerGroup className="process-grid">
           {howItWorks.map((step, index) => (
-            <article className="step-card" key={step.title}>
+            <StaggerItem className="step-card" key={step.title}>
               <span className="step-number">{index + 1}</span>
               <h3>{step.title}</h3>
               <p>{step.body}</p>
-            </article>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerGroup>
 
         <div className="button-row hero-actions">
           <ButtonLink href="/book-demo" eventName="demo_cta_click">

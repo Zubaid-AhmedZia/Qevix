@@ -15,42 +15,45 @@ export const demoTranscripts: DemoTranscript[] = [
     id: "dental",
     label: "Dental clinic",
     caller:
-      "Hi, I chipped a tooth this morning. I am a new patient and need to know if anyone can see me soon.",
+      "I am a new patient with tooth pain. I need to know if you can see me today and whether you take emergency visits.",
     ai:
-      "I can help with that. I will collect a few details, check your preferred time window, and mark this as an urgent new-patient request for the clinic.",
+      "I can help. I will collect your details, mark this as urgent, check the best appointment path, and send the clinic a summary before you arrive.",
     details: [
-      { label: "Need", value: "Chipped tooth, new patient" },
-      { label: "Priority", value: "Urgent dental appointment" },
-      { label: "Captured", value: "Name, phone, preferred time" }
+      { label: "Voice", value: "Urgent new-patient request captured" },
+      { label: "Booking", value: "Same-day preference collected" },
+      { label: "CRM", value: "New patient lead routed to front desk" }
     ],
-    finalAction: "Booked available consultation slot and sent summary to front desk."
+    finalAction:
+      "Appointment request created, SMS confirmation queued, and the front desk receives the call summary."
   },
   {
     id: "home-services",
     label: "Home services",
     caller:
-      "My water heater is leaking and I need someone to tell me whether this can be looked at today.",
+      "My water heater is leaking. I need someone today, but I am not sure what information you need first.",
     ai:
-      "I can gather the job details and route this as a same-day service request. What is the property address and is the leak active right now?",
+      "I will gather the property address, leak status, access notes, and urgency so the dispatch team can respond with the right next step.",
     details: [
-      { label: "Need", value: "Water heater leak" },
-      { label: "Priority", value: "Same-day service request" },
-      { label: "Captured", value: "Address, urgency, access notes" }
+      { label: "Voice", value: "Emergency service details collected" },
+      { label: "Follow-up", value: "Text prompt prepared for photos" },
+      { label: "Pipeline", value: "Same-day service task created" }
     ],
-    finalAction: "Created dispatch-ready request and notified service coordinator."
+    finalAction:
+      "Lead moves to urgent dispatch, customer gets a photo-request text, and the coordinator gets the task."
   },
   {
-    id: "property",
-    label: "Property team",
+    id: "medspa",
+    label: "Medspa",
     caller:
-      "I am calling about a two-bedroom listing and want to know if I can tour it after work this week.",
+      "I saw your treatment page and want to know if I am a good fit before booking a consultation.",
     ai:
-      "I can help schedule a tour. I will confirm the listing, your preferred days, and the best contact number before sending this to the leasing team.",
+      "I can ask a few consultation questions, collect your preferred times, and send the care team the context they need before they follow up.",
     details: [
-      { label: "Need", value: "Two-bedroom tour request" },
-      { label: "Priority", value: "Qualified leasing enquiry" },
-      { label: "Captured", value: "Listing, schedule, contact details" }
+      { label: "Voice", value: "Treatment interest qualified" },
+      { label: "Funnel", value: "Consultation source captured" },
+      { label: "Follow-up", value: "Reminder sequence prepared" }
     ],
-    finalAction: "Reserved tour window and sent lead details to leasing team."
+    finalAction:
+      "Consult request routed to the right team, CRM source tagged, and follow-up reminder prepared."
   }
 ];

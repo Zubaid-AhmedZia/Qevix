@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import type { NavItem } from "@/content/navigation";
 
 export function MobileNav({ items }: { items: NavItem[] }) {
@@ -10,30 +10,42 @@ export function MobileNav({ items }: { items: NavItem[] }) {
   return (
     <>
       <button
-        className="mobile-menu-button"
+        className={open ? "mobile-menu-button is-open" : "mobile-menu-button"}
         type="button"
         aria-label={open ? "Close menu" : "Open menu"}
         aria-controls="mobile-navigation"
         aria-expanded={open}
         onClick={() => setOpen((current) => !current)}
       >
-        {open ? <X aria-hidden="true" size={20} /> : <Menu aria-hidden="true" size={20} />}
+        <span className="mobile-menu-icon" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </span>
       </button>
-      {open ? (
-        <nav className="mobile-drawer" id="mobile-navigation" aria-label="Mobile navigation">
-          {items.map((item) => (
-            <a href={item.href} key={item.href} onClick={() => setOpen(false)}>
-              {item.label}
-            </a>
-          ))}
-          <a href="/#demo" onClick={() => setOpen(false)}>
-            See live demo
+      <nav
+        className={open ? "mobile-drawer is-open" : "mobile-drawer"}
+        id="mobile-navigation"
+        aria-label="Mobile navigation"
+        aria-hidden={!open}
+        inert={!open}
+      >
+        {items.map((item) => (
+          <a href={item.href} key={item.href} onClick={() => setOpen(false)}>
+            {item.label}
           </a>
-          <a href="/book-demo" onClick={() => setOpen(false)}>
-            Book a demo
-          </a>
-        </nav>
-      ) : null}
+        ))}
+        <a href="/#demo" onClick={() => setOpen(false)}>
+          See live demo
+        </a>
+        <a href="/book-demo" onClick={() => setOpen(false)}>
+          Book a demo
+        </a>
+        <div className="mobile-drawer-actions">
+          <span>Theme</span>
+          <ThemeToggle />
+        </div>
+      </nav>
     </>
   );
 }

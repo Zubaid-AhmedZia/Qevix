@@ -22,11 +22,11 @@ export function FloatingPanel({
     <motion.div
       className={className}
       initial={{ opacity: 0, y: 22, scale: 0.98 }}
-      animate={{ opacity: 1, y: [0, -8, 0], scale: 1 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{
-        opacity: { duration: 0.55, delay },
-        scale: { duration: 0.55, delay },
-        y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay }
+        opacity: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] },
+        scale: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] },
+        y: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] }
       }}
     >
       {children}

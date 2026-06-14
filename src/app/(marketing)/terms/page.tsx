@@ -13,8 +13,8 @@ export default function TermsPage() {
       <h1>Terms of use</h1>
       <p>Last updated: June 12, 2026</p>
       <p>
-        These terms govern use of the QevixAi marketing website. They are written as a
-        practical launch baseline and should be reviewed by counsel before production use.
+        These terms govern use of the QevixAi marketing website and any enquiries
+        submitted through the site.
       </p>
 
       <h2>Acceptable use</h2>
@@ -53,9 +53,8 @@ export default function TermsPage() {
 
       <h2>Governing law</h2>
       <p>
-        These terms should be governed by the laws of QevixAi's formal operating
-        jurisdiction. Confirm the jurisdiction before launch if QevixAi has not finalized
-        it.
+        These terms are governed by the laws that apply to QevixAi's operating
+        jurisdiction and any written agreement between QevixAi and the customer.
       </p>
 
       <h2>Changes</h2>

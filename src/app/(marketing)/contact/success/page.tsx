@@ -14,7 +14,7 @@ export default function ContactSuccessPage() {
         <h1>Thanks. Your message was submitted.</h1>
         <p>
           The team can now review your enquiry and respond with the right next step for
-          your call workflow.
+          your automation workflow.
         </p>
         <div className="button-row">
           <ButtonLink href="/">Back to homepage</ButtonLink>
