@@ -8,11 +8,12 @@ import {
 } from "@/lib/actions/submit-demo-request";
 
 const industries = [
-  "Dental clinic",
-  "Medspa",
-  "Salon",
+  "Medical clinic",
+  "Roofing company",
+  "Real estate team",
+  "Auto dealership",
+  "Medspa or salon",
   "Home services",
-  "Property team",
   "Legal office",
   "Restaurant",
   "Multi-location business",
@@ -20,18 +21,20 @@ const industries = [
 ];
 
 const callVolumes = [
-  "Under 100 calls per month",
-  "100-500 calls per month",
-  "500-1,500 calls per month",
-  "1,500+ calls per month",
+  "Under 100 leads/calls per month",
+  "100-500 leads/calls per month",
+  "500-1,500 leads/calls per month",
+  "1,500+ leads/calls per month",
   "Not sure yet"
 ];
 
-const plans = [
-  { value: "", label: "Recommend the right setup" },
-  { value: "starter", label: "Starter" },
-  { value: "growth", label: "Growth" },
-  { value: "multi-location", label: "Multi-location" }
+const mainGoals = [
+  "Answer missed calls",
+  "Book more appointments",
+  "Automate follow-ups",
+  "Qualify leads",
+  "Reduce admin workload",
+  "Other"
 ];
 
 function errorId(name: string) {
@@ -47,6 +50,7 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
     website: "",
     industry: "",
     callVolume: "",
+    mainGoal: "",
     plan: defaultPlan,
     currentChallenge: ""
   };
@@ -64,8 +68,10 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
         </p>
       ) : null}
 
+      <input type="hidden" name="plan" value={values.plan} />
+
       <div className="field">
-        <label htmlFor="name">Name</label>
+        <label htmlFor="name">Full name</label>
         <input
           id="name"
           name="name"
@@ -111,7 +117,7 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
       </div>
 
       <div className="field">
-        <label htmlFor="company">Company</label>
+        <label htmlFor="company">Company name</label>
         <input
           id="company"
           name="company"
@@ -163,7 +169,7 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
       </div>
 
       <div className="field">
-        <label htmlFor="callVolume">Approximate call volume</label>
+        <label htmlFor="callVolume">Monthly lead/call volume</label>
         <select
           id="callVolume"
           name="callVolume"
@@ -186,28 +192,30 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
       </div>
 
       <div className="field">
-        <label htmlFor="plan">Plan interest</label>
+        <label htmlFor="mainGoal">Main goal</label>
         <select
-          id="plan"
-          name="plan"
-          defaultValue={values.plan}
-          aria-describedby={state.errors?.plan ? errorId("plan") : undefined}
+          id="mainGoal"
+          name="mainGoal"
+          defaultValue={values.mainGoal}
+          required
+          aria-describedby={state.errors?.mainGoal ? errorId("mainGoal") : undefined}
         >
-          {plans.map((plan) => (
-            <option value={plan.value} key={plan.value}>
-              {plan.label}
+          <option value="">Select main goal</option>
+          {mainGoals.map((goal) => (
+            <option value={goal} key={goal}>
+              {goal}
             </option>
           ))}
         </select>
-        {state.errors?.plan ? (
-          <span className="field-error" id={errorId("plan")}>
-            {state.errors.plan}
+        {state.errors?.mainGoal ? (
+          <span className="field-error" id={errorId("mainGoal")}>
+            {state.errors.mainGoal}
           </span>
         ) : null}
       </div>
 
       <div className="field">
-        <label htmlFor="currentChallenge">Current call workflow</label>
+        <label htmlFor="currentChallenge">Message / workflow details</label>
         <textarea
           id="currentChallenge"
           name="currentChallenge"
@@ -216,7 +224,7 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
           aria-describedby={
             state.errors?.currentChallenge ? errorId("currentChallenge") : undefined
           }
-          placeholder="Tell us what happens today when calls are missed, busy, or after hours."
+          placeholder="Tell us what happens today when leads call, message, book, or need follow-up."
         />
         {state.errors?.currentChallenge ? (
           <span className="field-error" id={errorId("currentChallenge")}>
@@ -225,7 +233,7 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
         ) : null}
       </div>
 
-      <SubmitButton pendingLabel="Sending request...">Request demo</SubmitButton>
+      <SubmitButton pendingLabel="Sending request...">Request My Free AI Audit</SubmitButton>
     </form>
   );
 }

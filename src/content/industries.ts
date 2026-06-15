@@ -5,43 +5,27 @@ export type Industry = {
 
 export const industries: Industry[] = [
   {
-    title: "Dentists",
-    body:
-      "Capture new patient calls, route urgent requests, answer location questions, and move qualified patients toward booking."
+    title: "Medical Clinics",
+    body: "Answer patient enquiries, book appointments, handle rescheduling, and route urgent calls."
   },
   {
-    title: "Medspas",
-    body:
-      "Qualify treatment interest, collect consultation details, send follow-up prompts, and protect staff time."
+    title: "Roofing Companies",
+    body: "Qualify quote requests, capture job details, and book inspection calls before leads go cold."
   },
   {
-    title: "Clinics",
-    body:
-      "Handle common questions, collect intake context, and escalate sensitive calls without leaving callers stranded."
+    title: "Real Estate Teams",
+    body: "Qualify buyer and seller leads, schedule calls, and send automatic follow-ups."
   },
   {
-    title: "Home services",
-    body:
-      "Capture job type, location, urgency, and photos or notes before dispatch or callback."
+    title: "Auto Dealerships",
+    body: "Answer vehicle enquiries, qualify buyers, book test drives, and follow up with prospects."
   },
   {
-    title: "Real estate teams",
-    body:
-      "Qualify buyers, sellers, tenants, and tour requests, then route each lead into the right pipeline stage."
+    title: "Medspas & Salons",
+    body: "Answer service questions, book consultations, and reduce front-desk interruptions."
   },
   {
-    title: "Legal offices",
-    body:
-      "Collect matter type, urgency, contact details, and conflict-safe notes before a human reviews the enquiry."
-  },
-  {
-    title: "Restaurants",
-    body:
-      "Answer routine questions, collect event enquiries, and route booking requests during peak service hours."
-  },
-  {
-    title: "Multi-location brands",
-    body:
-      "Keep call handling, follow-up, and CRM routing consistent across locations without hiding local context."
+    title: "Home Services",
+    body: "Capture service requests, ask intake questions, route urgent jobs, and fill the calendar."
   }
 ];

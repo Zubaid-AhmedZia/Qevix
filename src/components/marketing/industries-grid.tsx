@@ -3,9 +3,7 @@ import {
   CalendarCheck,
   HeartPulse,
   Home,
-  Scale,
   Sparkles,
-  Store,
   Wrench
 } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
@@ -13,7 +11,7 @@ import { StaggerGroup, StaggerItem } from "@/components/motion/stagger-group";
 import { ButtonLink } from "@/components/ui/button";
 import { industries } from "@/content/industries";
 
-const icons = [Sparkles, HeartPulse, Building2, Wrench, Home, Scale, Store, Building2];
+const icons = [HeartPulse, Wrench, Building2, Sparkles, CalendarCheck, Home];
 
 export function IndustriesGrid() {
   return (
@@ -22,11 +20,10 @@ export function IndustriesGrid() {
         <Reveal>
           <p className="section-kicker">Industries</p>
           <h2 className="section-heading">
-            Designed for businesses that care for people and cannot babysit every channel.
+            Built for Businesses That Depend on Fast Responses
           </h2>
           <p className="section-lede">
-            QevixAi is strongest where calls, enquiries, bookings, and follow-up repeat
-            every day but still need a professional human-ready handoff.
+            QevixAi adapts to your workflow: calls, leads, bookings, follow-ups, and handoffs.
           </p>
         </Reveal>
 
@@ -47,12 +44,12 @@ export function IndustriesGrid() {
 
         <div className="button-row hero-actions">
           <ButtonLink
-            href="/book-demo?source=industries"
-            eventName="demo_cta_click"
+            href="/contact"
+            eventName="contact_cta_click"
             eventProperties={{ source: "industries" }}
           >
             <CalendarCheck aria-hidden="true" size={18} />
-            Talk about your industry
+            Not sure if it fits? Get Your Custom Automation Plan
           </ButtonLink>
         </div>
       </div>

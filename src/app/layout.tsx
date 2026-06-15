@@ -5,13 +5,13 @@ import { siteConfig } from "@/content/site";
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "QevixAi | AI automation for calls, follow-up, booking, and CRM",
+    default: "QevixAi - AI Receptionist That Books Appointments & Automates Follow-Ups",
     template: "%s | QevixAi"
   },
   description: siteConfig.description,
   applicationName: "QevixAi",
   openGraph: {
-    title: "QevixAi | Automate calls, follow-up, booking, and CRM",
+    title: "QevixAi - AI Receptionist That Books Appointments & Automates Follow-Ups",
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: "QevixAi",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "QevixAi | Automate calls, follow-up, booking, and CRM",
+    title: "QevixAi - AI Receptionist That Books Appointments & Automates Follow-Ups",
     description: siteConfig.description,
     images: ["/opengraph-image"]
   }

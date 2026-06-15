@@ -23,7 +23,8 @@ export function FAQ() {
             </AccordionItem>
           ))}
           <p className="faq-contact">
-            Need a workflow reviewed? <Link href="/contact">Contact sales</Link>.
+            Need a workflow reviewed?{" "}
+            <Link href="/contact">Get Your Custom Automation Plan</Link>.
           </p>
         </div>
       </div>

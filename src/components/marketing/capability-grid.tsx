@@ -13,16 +13,15 @@ export function CapabilityGrid() {
         <Reveal>
           <p className="section-kicker">AI voice agents</p>
           <h2 className="section-heading">
-            Your front desk, intake assistant, and routing layer in one calm voice.
+            Answer Leads Instantly, Even When Your Team Is Busy
           </h2>
           <p className="section-lede">
-            QevixAi does not just answer calls. It listens for intent, captures the right
-            details, follows your rules, and gives humans the context they need when a
-            conversation deserves a person.
+            QevixAi captures intent, books next steps, and routes the right conversations
+            to a human.
           </p>
           <div className="button-row hero-actions">
             <ButtonLink href="/contact" variant="secondary" eventName="contact_cta_click">
-              Talk to sales
+              Get Your Custom Automation Plan
             </ButtonLink>
           </div>
         </Reveal>

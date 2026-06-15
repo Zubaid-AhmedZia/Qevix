@@ -3,9 +3,9 @@ import { CalendarCheck, CheckCircle2 } from "lucide-react";
 import { DemoRequestForm } from "@/components/forms/demo-request-form";
 
 export const metadata: Metadata = {
-  title: "Book a demo",
+  title: "Book Your Free AI Audit",
   description:
-    "Request a QevixAi demo for voice agents, follow-up, booking, CRM, and workflow automation."
+    "Request a free QevixAi audit for AI receptionist, follow-up, booking, and lead qualification workflows."
 };
 
 const validPlans = new Set(["starter", "growth", "multi-location"]);
@@ -23,21 +23,18 @@ export default async function BookDemoPage({ searchParams }: PageProps) {
     <main className="form-page">
       <div className="container form-layout">
         <div>
-          <p className="section-kicker">Book a demo</p>
-          <h1 className="section-heading">
-            See how QevixAi can connect voice, follow-up, booking, and CRM.
-          </h1>
+          <p className="section-kicker">Free AI audit</p>
+          <h1 className="section-heading">Book Your Free AI Audit</h1>
           <p className="section-lede">
-            Share the basics about your industry, call volume, and current customer
-            journey. The demo is scoped around the places where leads slow down, get
-            missed, or need a cleaner handoff.
+            Tell us how your business handles calls, leads, appointments, and follow-ups.
+            We will recommend a practical AI receptionist workflow.
           </p>
 
           <ul className="control-list hero-actions">
             {[
               "Map your busiest call and lead paths",
-              "Review booking, follow-up, and handoff rules",
-              "Scope the automation layers that fit your operation"
+              "Review booking and follow-up rules",
+              "Find where leads, time, or appointments are being lost"
             ].map((item) => (
               <li key={item}>
                 <CheckCircle2 aria-hidden="true" size={18} className="positive" />
@@ -50,7 +47,7 @@ export default async function BookDemoPage({ searchParams }: PageProps) {
         <div className="form-card">
           <div className="eyebrow">
             <CalendarCheck aria-hidden="true" size={16} />
-            Demo request
+            AI audit request
           </div>
           <DemoRequestForm defaultPlan={defaultPlan} />
         </div>

@@ -5,14 +5,14 @@ import { howItWorks } from "@/content/site";
 
 export function HowItWorks() {
   return (
-    <section className="section process-section" id="process">
+    <section className="section process-section" id="how-it-works">
       <div className="container">
         <Reveal>
           <p className="section-kicker">Process</p>
-          <h2 className="section-heading">From messy customer journey to clean automation system.</h2>
+          <h2 className="section-heading">How QevixAi Works</h2>
           <p className="section-lede">
-            The goal is not to add random AI features. It is to design a dependable path
-            from first contact to booked appointment, routed lead, or informed follow-up.
+            We map your workflow, build your AI receptionist, and help you turn more
+            enquiries into booked appointments.
           </p>
         </Reveal>
 
@@ -28,7 +28,7 @@ export function HowItWorks() {
 
         <div className="button-row hero-actions">
           <ButtonLink href="/book-demo" eventName="demo_cta_click">
-            Book a demo
+            Book a Free AI Audit
           </ButtonLink>
         </div>
       </div>

@@ -36,10 +36,10 @@ export function MobileNav({ items }: { items: NavItem[] }) {
           </a>
         ))}
         <a href="/#demo" onClick={() => setOpen(false)}>
-          See live demo
+          See a Live Demo
         </a>
         <a href="/book-demo" onClick={() => setOpen(false)}>
-          Book a demo
+          Book a Free AI Audit
         </a>
         <div className="mobile-drawer-actions">
           <span>Theme</span>

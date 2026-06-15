@@ -10,11 +10,10 @@ export function ControlPanel() {
         <Reveal>
           <p className="section-kicker">Control and transparency</p>
           <h2 className="section-heading">
-            Automation should feel powerful, not mysterious.
+            Stay in Control of Every Handoff
           </h2>
           <p className="section-lede">
-            You decide what the system can answer, where leads go, when humans step in,
-            and how follow-up should continue after the first conversation.
+            You decide what QevixAi answers, books, routes, summarizes, and escalates.
           </p>
 
           <ul className="control-list">
@@ -28,7 +27,7 @@ export function ControlPanel() {
 
           <div className="button-row hero-actions">
             <ButtonLink href="/contact" variant="secondary" eventName="contact_cta_click">
-              Contact sales
+              Get Your Custom Automation Plan
             </ButtonLink>
           </div>
         </Reveal>
@@ -63,8 +62,8 @@ export function ControlPanel() {
             <div className="summary-card">
               <strong>Latest workflow insight</strong>
               <p>
-                Most after-hours callers ask for availability first. Add that answer to the
-                opening flow and route urgent calls faster.
+                After-hours callers ask for availability first. Add that answer and route
+                urgent calls faster.
               </p>
             </div>
           </div>

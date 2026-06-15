@@ -10,10 +10,10 @@ export function QevixLogo({ href = "/", compact = false }: QevixLogoProps) {
   const mark = (
     <span className="qevix-logo-mark">
       <Image
-        src="/logonew.png"
+        src="/qevix_logo_exact_high_quality_4x-Photoroom.png"
         alt=""
-        width={96}
-        height={96}
+        width={2400}
+        height={2400}
         sizes="48px"
         priority
       />

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "QevixAi AI automation for calls, follow-up, booking, CRM, and workflows";
+export const alt = "QevixAi AI receptionist that books appointments and automates follow-ups";
 export const size = {
   width: 1200,
   height: 630
@@ -51,16 +51,16 @@ export default function OpenGraphImage() {
         </div>
         <div style={{ maxWidth: 920 }}>
           <div style={{ color: "#5b5ff5", fontSize: 28, fontWeight: 800 }}>
-            AI automation for businesses that cannot afford slow follow-up
+            AI receptionist and follow-up automation
           </div>
           <div style={{ marginTop: 22, fontSize: 74, lineHeight: 0.96, fontWeight: 900 }}>
-            Answer, follow up, book, route, and report from one workflow.
+            Automate follow-ups. Book more appointments. Save 20+ hours per week.
           </div>
         </div>
         <div style={{ display: "flex", gap: 16, color: "#526070", fontSize: 26 }}>
-          <span>AI voice agents</span>
-          <span>SMS and WhatsApp follow-up</span>
-          <span>CRM visibility</span>
+          <span>Instant lead response</span>
+          <span>Appointment booking</span>
+          <span>24/7 availability</span>
         </div>
       </div>
     ),

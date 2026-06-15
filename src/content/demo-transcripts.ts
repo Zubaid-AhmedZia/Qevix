@@ -13,47 +13,38 @@ export type DemoTranscript = {
 export const demoTranscripts: DemoTranscript[] = [
   {
     id: "dental",
-    label: "Dental clinic",
-    caller:
-      "I am a new patient with tooth pain. I need to know if you can see me today and whether you take emergency visits.",
-    ai:
-      "I can help. I will collect your details, mark this as urgent, check the best appointment path, and send the clinic a summary before you arrive.",
+    label: "Medical clinic",
+    caller: "I am a new patient and need an appointment today.",
+    ai: "I can help. I will collect the key details, mark the request, and send the clinic a summary.",
     details: [
-      { label: "Voice", value: "Urgent new-patient request captured" },
-      { label: "Booking", value: "Same-day preference collected" },
-      { label: "CRM", value: "New patient lead routed to front desk" }
+      { label: "Lead comes in", value: "New patient request captured" },
+      { label: "Qualify", value: "Urgency and preference collected" },
+      { label: "Book or route", value: "Front desk receives summary" }
     ],
-    finalAction:
-      "Appointment request created, SMS confirmation queued, and the front desk receives the call summary."
+    finalAction: "Appointment request created, SMS follow-up queued, and the team gets clean notes."
   },
   {
     id: "home-services",
     label: "Home services",
-    caller:
-      "My water heater is leaking. I need someone today, but I am not sure what information you need first.",
-    ai:
-      "I will gather the property address, leak status, access notes, and urgency so the dispatch team can respond with the right next step.",
+    caller: "My water heater is leaking. I need someone today.",
+    ai: "I will gather the address, urgency, and job details so dispatch can respond fast.",
     details: [
-      { label: "Voice", value: "Emergency service details collected" },
-      { label: "Follow-up", value: "Text prompt prepared for photos" },
-      { label: "Pipeline", value: "Same-day service task created" }
+      { label: "Lead comes in", value: "Emergency request captured" },
+      { label: "Qualify", value: "Address and urgency collected" },
+      { label: "Book or route", value: "Same-day task created" }
     ],
-    finalAction:
-      "Lead moves to urgent dispatch, customer gets a photo-request text, and the coordinator gets the task."
+    finalAction: "Lead moves to urgent dispatch and the customer receives a photo-request text."
   },
   {
     id: "medspa",
     label: "Medspa",
-    caller:
-      "I saw your treatment page and want to know if I am a good fit before booking a consultation.",
-    ai:
-      "I can ask a few consultation questions, collect your preferred times, and send the care team the context they need before they follow up.",
+    caller: "I want to know if I am a good fit before booking a consultation.",
+    ai: "I can ask a few intake questions, collect preferred times, and prepare the care team.",
     details: [
-      { label: "Voice", value: "Treatment interest qualified" },
-      { label: "Funnel", value: "Consultation source captured" },
-      { label: "Follow-up", value: "Reminder sequence prepared" }
+      { label: "Lead comes in", value: "Treatment interest captured" },
+      { label: "Qualify", value: "Consult questions answered" },
+      { label: "Book or route", value: "Follow-up prepared" }
     ],
-    finalAction:
-      "Consult request routed to the right team, CRM source tagged, and follow-up reminder prepared."
+    finalAction: "Consult request is routed, source is tagged, and follow-up is ready."
   }
 ];

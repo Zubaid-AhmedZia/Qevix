@@ -316,9 +316,10 @@ svg {
 }
 
 .qevix-logo-mark img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  transform: scale(1.56) translateY(-4%);
 }
 
 .brand-word {
@@ -625,8 +626,8 @@ svg {
   z-index: 1;
   display: grid;
   min-height: 650px;
-  --hero-logo-size: clamp(220px, 18vw, 340px);
-  --hero-logo-ratio: 0.773;
+  --hero-logo-size: clamp(240px, 20vw, 380px);
+  --hero-logo-ratio: 1;
   --hero-logo-height: calc(var(--hero-logo-size) * var(--hero-logo-ratio));
   --logo-hover-shift: -32px;
   --popup-card-gap: 28px;
@@ -670,6 +671,7 @@ svg {
   width: var(--hero-logo-size);
   height: auto;
   object-fit: contain;
+  transform: scale(1.4) translateY(-8%) translateX(-5%);
 }
 
 .hero-hover-stack {
@@ -1002,6 +1004,7 @@ svg {
 .capability-card,
 .simple-card,
 .comparison-card,
+.case-study-card,
 .detail-item,
 .bubble,
 .summary-card,
@@ -1063,7 +1066,8 @@ svg {
 .process-grid,
 .pricing-grid,
 .card-grid,
-.comparison-card-grid {
+.comparison-card-grid,
+.case-study-grid {
   display: grid;
   gap: 18px;
   margin-top: 42px;
@@ -1075,7 +1079,8 @@ svg {
 .step-card,
 .capability-card,
 .simple-card,
-.comparison-card {
+.comparison-card,
+.case-study-card {
   padding: 26px;
   transition:
     transform 190ms ease,
@@ -1219,6 +1224,90 @@ svg {
 
 .comparison-card-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.case-study-section {
+  background:
+    radial-gradient(circle at 18% 24%, rgba(179, 51, 255, 0.11), transparent 32%),
+    radial-gradient(circle at 84% 62%, rgba(4, 217, 255, 0.1), transparent 34%);
+}
+
+[data-theme="light"] .case-study-section {
+  background:
+    radial-gradient(circle at 18% 24%, rgba(179, 51, 255, 0.08), transparent 32%),
+    radial-gradient(circle at 84% 62%, rgba(4, 217, 255, 0.08), transparent 34%);
+}
+
+.case-study-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-study-card {
+  display: grid;
+  gap: 18px;
+  min-height: 330px;
+  border-color: rgba(122, 60, 255, 0.26);
+  background:
+    linear-gradient(135deg, rgba(179, 51, 255, 0.12), rgba(4, 217, 255, 0.075)),
+    rgba(255, 255, 255, 0.045);
+  padding: 26px;
+}
+
+[data-theme="light"] .case-study-card {
+  border-color: rgba(101, 55, 242, 0.18);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(239, 246, 255, 0.72)),
+    rgba(255, 255, 255, 0.72);
+}
+
+.case-study-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  color: var(--aqua);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.case-metric-list {
+  display: grid;
+  gap: 10px;
+}
+
+.case-metric {
+  border: 1px solid rgba(4, 217, 255, 0.18);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.055);
+  padding: 13px;
+}
+
+[data-theme="light"] .case-metric {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.case-metric strong {
+  display: block;
+  background: linear-gradient(90deg, var(--brand-strong), var(--aqua));
+  background-clip: text;
+  color: transparent;
+  font-family: var(--display-font);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.case-metric span {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.case-study-card p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .comparison-card {
@@ -1970,6 +2059,7 @@ svg {
 @media (min-width: 760px) {
   .hero {
     overflow: visible;
+    padding: clamp(44px, 6vh, 72px) 0 clamp(50px, 7vh, 72px);
   }
 
   .voice-layout,
@@ -1993,7 +2083,8 @@ svg {
 
   .industry-grid,
   .process-grid,
-  .card-grid {
+  .card-grid,
+  .case-study-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -2007,7 +2098,7 @@ svg {
 
   .hero-stage {
     width: 100%;
-    min-height: 620px;
+    min-height: clamp(500px, 68vh, 620px);
     justify-self: stretch;
     margin-left: 0;
     border: 0;
@@ -2026,40 +2117,38 @@ svg {
   }
 
   .hero-visual-inner {
-    width: min(100%, 760px);
-    min-height: 620px;
+    width: min(100%, 640px);
+    min-height: clamp(500px, 68vh, 620px);
     margin-inline: auto;
     overflow: visible;
-    --hero-visual-gap: clamp(72px, 6vw, 92px);
+    --hero-visual-gap: clamp(78px, 6vw, 104px);
     --connector-length: calc(var(--hero-visual-gap) + (var(--logo-hover-shift) * -1));
-    grid-template-columns: var(--hero-logo-size) max-content;
-    column-gap: var(--hero-visual-gap);
-    justify-content: center;
+    display: block;
   }
 
   .hero-logo-node {
-    position: relative;
-    left: auto;
-    top: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
     z-index: 1;
-    transform: translateX(0) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 
   .hero-stage.is-active .hero-logo-node {
-    transform: translateX(var(--logo-hover-shift)) rotate(360deg);
+    transform: translate(calc(-50% + var(--logo-hover-shift)), -50%) rotate(360deg);
   }
 
   .hero-hover-stack {
-    position: relative;
-    left: auto;
-    top: auto;
+    position: absolute;
+    left: calc(50% + (var(--hero-logo-size) / 2) + var(--connector-length) + 20px);
+    top: 50%;
     z-index: 2;
     display: flex;
     width: max-content;
     margin-top: 0;
     flex-direction: column;
     gap: var(--popup-card-gap);
-    transform: none;
+    transform: translateY(-50%);
     pointer-events: none;
   }
 
@@ -2349,11 +2438,33 @@ svg {
   }
 
   .hero-grid {
-    grid-template-columns: minmax(0, 0.94fr) minmax(470px, 0.86fr);
+    gap: clamp(76px, 7vw, 112px);
+    grid-template-columns: minmax(0, 0.9fr) minmax(500px, 0.92fr);
+  }
+
+  .hero h1 {
+    margin-top: 18px;
+    font-size: clamp(4.35rem, 5.55vw, 5.1rem);
+  }
+
+  .hero-copy {
+    margin-top: 20px;
+  }
+
+  .microproof {
+    margin-top: 22px;
+  }
+
+  .hero-actions {
+    margin-top: 26px;
   }
 
   .service-grid,
   .pricing-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .case-study-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -2399,7 +2510,7 @@ svg {
 
   .hero-logo-system {
     width: 260px;
-    height: 201px;
+    height: 260px;
   }
 
   .hero-logo-system img {
@@ -2435,6 +2546,7 @@ svg {
 }
 
 @media (max-width: 900px) {
+  .case-study-grid,
   .comparison-card-grid,
   .comparison-card-split,
   .pricing-method {
@@ -2492,7 +2604,7 @@ svg {
 
   .hero-logo-system {
     width: 210px;
-    height: 162px;
+    height: 210px;
   }
 
   .hero-logo-system img {

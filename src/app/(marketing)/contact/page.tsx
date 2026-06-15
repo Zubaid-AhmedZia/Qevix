@@ -3,8 +3,8 @@ import { MessageSquare, ShieldCheck } from "lucide-react";
 import { ContactForm } from "@/components/forms/contact-form";
 
 export const metadata: Metadata = {
-  title: "Contact sales",
-  description: "Contact QevixAi about automation strategy, setup, partnerships, or product questions."
+  title: "Get Your Custom Automation Plan",
+  description: "Contact QevixAi for a practical AI receptionist and follow-up automation plan."
 };
 
 export default function ContactPage() {
@@ -12,12 +12,11 @@ export default function ContactPage() {
     <main className="form-page">
       <div className="container form-layout">
         <div>
-          <p className="section-kicker">Contact</p>
-          <h1 className="section-heading">Talk to QevixAi about your automation workflow.</h1>
+          <p className="section-kicker">Custom automation plan</p>
+          <h1 className="section-heading">Get a Practical Plan for Your Workflow</h1>
           <p className="section-lede">
-            Use this route for sales questions, setup details, partnerships, or product
-            conversations. Share the workflow you want to improve and the team will have
-            enough context to respond with a practical next step.
+            Share what happens when leads call, message, book, or need follow-up. We will
+            recommend the next best workflow.
           </p>
 
           <ul className="control-list hero-actions">
@@ -37,7 +36,7 @@ export default function ContactPage() {
         <div className="form-card">
           <div className="eyebrow">
             <MessageSquare aria-hidden="true" size={16} />
-            Contact sales
+            Custom plan request
           </div>
           <ContactForm />
         </div>

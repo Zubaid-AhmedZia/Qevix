@@ -46,11 +46,11 @@ export function HeroAutomationScene() {
         <div className="hero-logo-node" tabIndex={0}>
           <div className="hero-logo-system" aria-hidden="true">
             <Image
-              src="/q-mark.png"
+              src="/qevix_logo_exact_high_quality_4x-Photoroom.png"
               alt=""
-              width={330}
-              height={255}
-              sizes="(min-width: 1040px) 340px, 210px"
+              width={2400}
+              height={2400}
+              // sizes="(min-width: 1040px) 380px, 210px"
               priority
             />
           </div>

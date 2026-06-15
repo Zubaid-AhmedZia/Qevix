@@ -6,18 +6,23 @@ import { pricingPlans } from "@/content/pricing";
 import { cn } from "@/lib/utils/cn";
 
 export function PricingGrid() {
+  const ctaLabels: Record<string, string> = {
+    starter: "Book a Free AI Audit",
+    growth: "Get Your Custom Automation Plan",
+    "multi-location": "Talk Through Your Workflow"
+  };
+
   return (
     <section className="section pricing-section" id="pricing">
       <div className="container">
         <Reveal>
           <p className="section-kicker">Pricing</p>
           <h2 className="section-heading">
-            Pricing that matches your workflows, channels, and locations.
+            Simple Plans Built Around Your Workflow
           </h2>
           <p className="section-lede">
-            QevixAi is scoped around call volume, automation layers, tool connections, and
-            handoff complexity. Choose the shape that matches your growth stage, then use
-            the demo to turn it into a specific scope.
+            Choose a starting point. We recommend the right setup based on your call
+            volume, lead sources, and booking process.
           </p>
         </Reveal>
 
@@ -54,7 +59,7 @@ export function PricingGrid() {
                 eventName="pricing_cta_click"
                 eventProperties={{ plan: plan.id }}
               >
-                Scope this system
+                {ctaLabels[plan.id]}
               </ButtonLink>
             </StaggerItem>
           ))}
@@ -63,7 +68,7 @@ export function PricingGrid() {
         <div className="pricing-method">
           <div>
             <span className="section-kicker">How pricing works</span>
-            <h3>Tell us the workflow. We scope the build, monthly management, and launch path.</h3>
+            <h3>Tell us the workflow. We scope the build, management, and launch path.</h3>
           </div>
           <ul>
             <li>Fixed monthly scope after the workflow audit</li>

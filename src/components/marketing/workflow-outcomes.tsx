@@ -2,10 +2,10 @@ import { CheckCircle2, Sparkles } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 
 const outcomes = [
-  "New enquiries are captured before they cool off.",
-  "Follow-up happens from rules, not memory.",
-  "Humans receive cleaner context when they need to step in.",
-  "Owners can see where calls, leads, and bookings are getting stuck."
+  "New enquiries are captured fast.",
+  "Follow-up happens automatically.",
+  "Humans get cleaner context.",
+  "Owners see where leads get stuck."
 ];
 
 export function WorkflowOutcomes() {
@@ -15,7 +15,7 @@ export function WorkflowOutcomes() {
         <Reveal>
           <p className="section-kicker">Workflow outcomes</p>
           <h2 className="section-heading">
-            Proof starts with the operating outcomes your system can create.
+            Less Chasing. Cleaner Handoffs. More Booked Opportunities.
           </h2>
         </Reveal>
         <div className="outcome-list">

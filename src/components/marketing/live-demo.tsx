@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CalendarCheck, MessageSquareText, Workflow } from "lucide-react";
+import { CalendarCheck, MessageSquareText, PlayCircle, Workflow } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { ButtonLink } from "@/components/ui/button";
 import { demoTranscripts } from "@/content/demo-transcripts";
@@ -15,10 +15,9 @@ export function LiveDemo() {
       <div className="container">
         <Reveal>
           <p className="section-kicker">Live automation</p>
-          <h2 className="section-heading">See the journey from call to workflow.</h2>
+          <h2 className="section-heading">See QevixAi Handle a Lead in Real Time</h2>
           <p className="section-lede">
-            A good automation system does more than answer. It captures intent, prepares
-            follow-up, updates the pipeline, and tells the team what happened.
+            From first enquiry to booked appointment, QevixAi keeps the conversation moving.
           </p>
         </Reveal>
 
@@ -76,9 +75,13 @@ export function LiveDemo() {
           </div>
 
           <div className="button-row">
+            <ButtonLink href="/#demo" variant="secondary" eventName="demo_cta_click">
+              <PlayCircle aria-hidden="true" size={18} />
+              See a Live Demo
+            </ButtonLink>
             <ButtonLink href="/book-demo" eventName="demo_cta_click">
               <CalendarCheck aria-hidden="true" size={18} />
-              Book a demo
+              Book a Free AI Audit
             </ButtonLink>
             <span className="chip">
               <MessageSquareText aria-hidden="true" size={15} />

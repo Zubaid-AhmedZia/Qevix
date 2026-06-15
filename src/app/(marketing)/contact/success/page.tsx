@@ -19,7 +19,7 @@ export default function ContactSuccessPage() {
         <div className="button-row">
           <ButtonLink href="/">Back to homepage</ButtonLink>
           <ButtonLink href="/book-demo" variant="secondary" eventName="demo_cta_click">
-            Book a demo
+            Book a Free AI Audit
           </ButtonLink>
         </div>
       </section>

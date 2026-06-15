@@ -8,7 +8,7 @@ import {
 } from "@/lib/actions/submit-contact-request";
 
 const topics = [
-  "Talk to sales",
+  "Get a custom automation plan",
   "Ask about setup",
   "Partnership enquiry",
   "Support question",
@@ -133,7 +133,9 @@ export function ContactForm() {
         ) : null}
       </div>
 
-      <SubmitButton pendingLabel="Sending message...">Send message</SubmitButton>
+      <SubmitButton pendingLabel="Sending message...">
+        Get Your Custom Automation Plan
+      </SubmitButton>
     </form>
   );
 }

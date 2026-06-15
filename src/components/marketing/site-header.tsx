@@ -29,7 +29,7 @@ export function SiteHeader() {
             showArrow={false}
           >
             <PlayCircle aria-hidden="true" size={17} />
-            See automation
+            See a Live Demo
           </ButtonLink>
           <ButtonLink
             href="/book-demo"
@@ -37,7 +37,7 @@ export function SiteHeader() {
             showArrow={false}
           >
             <CalendarCheck aria-hidden="true" size={17} />
-            Book a demo
+            Book a Free AI Audit
           </ButtonLink>
         </div>
 

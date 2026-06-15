@@ -11,11 +11,14 @@ export function SiteFooter() {
     href: "/#automation-stack"
   }));
   const companyLinks = footerNav.filter((item) =>
-    ["Book demo", "Contact"].includes(item.label)
+    ["Book a Free AI Audit", "Get Your Custom Automation Plan"].includes(item.label)
   );
   const legalLinks = footerNav.filter((item) => ["Privacy", "Terms"].includes(item.label));
   const productLinks = footerNav.filter(
-    (item) => !["Book demo", "Contact", "Privacy", "Terms"].includes(item.label)
+    (item) =>
+      !["Book a Free AI Audit", "Get Your Custom Automation Plan", "Privacy", "Terms"].includes(
+        item.label
+      )
   );
 
   return (
@@ -24,10 +27,10 @@ export function SiteFooter() {
         <div className="footer-cta">
           <div>
             <p className="section-kicker">QevixAi</p>
-            <h2>Automate the front end of your customer journey.</h2>
+            <h2>Answer leads faster and book more appointments.</h2>
           </div>
           <ButtonLink href="/book-demo" eventName="demo_cta_click">
-            Book a demo
+            Book a Free AI Audit
           </ButtonLink>
         </div>
 
@@ -45,7 +48,7 @@ export function SiteFooter() {
 
         <div className="footer-bottom">
           <span>Copyright {year} QevixAi. All rights reserved.</span>
-          <span>Voice, follow-up, booking, CRM, and workflow automation.</span>
+          <span>AI receptionist, follow-up, booking, and lead qualification.</span>
         </div>
       </div>
     </footer>

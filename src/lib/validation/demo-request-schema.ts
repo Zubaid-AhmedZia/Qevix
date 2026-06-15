@@ -6,6 +6,7 @@ export type DemoRequestValues = {
   website: string;
   industry: string;
   callVolume: string;
+  mainGoal: string;
   plan: string;
   currentChallenge: string;
 };
@@ -31,6 +32,7 @@ export function getDemoRequestValues(formData: FormData): DemoRequestValues {
     website: valueFrom(formData, "website"),
     industry: valueFrom(formData, "industry"),
     callVolume: valueFrom(formData, "callVolume"),
+    mainGoal: valueFrom(formData, "mainGoal"),
     plan: valueFrom(formData, "plan"),
     currentChallenge: valueFrom(formData, "currentChallenge")
   };
@@ -44,6 +46,7 @@ export function validateDemoRequest(values: DemoRequestValues) {
   if (values.company.length < 2) errors.company = "Enter your company name.";
   if (!values.industry) errors.industry = "Select your industry.";
   if (!values.callVolume) errors.callVolume = "Select your approximate call volume.";
+  if (!values.mainGoal) errors.mainGoal = "Select your main goal.";
   if (!validPlans.has(values.plan)) errors.plan = "Choose a valid plan option.";
   if (values.currentChallenge.length < 12) {
     errors.currentChallenge = "Share a little more about your current call workflow.";

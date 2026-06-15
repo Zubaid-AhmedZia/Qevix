@@ -1,5 +1,6 @@
 import { CapabilityGrid } from "@/components/marketing/capability-grid";
 import { AutomationStack } from "@/components/marketing/automation-stack";
+import { CaseStudies } from "@/components/marketing/case-studies";
 import { ComparisonTable } from "@/components/marketing/comparison-table";
 import { ControlPanel } from "@/components/marketing/control-panel";
 import { CredibilityStrip } from "@/components/marketing/credibility-strip";
@@ -21,6 +22,7 @@ export default function HomePage() {
       <AutomationStack />
       <LiveDemo />
       <ComparisonTable />
+      <CaseStudies />
       <IndustriesGrid />
       <ControlPanel />
       <WorkflowOutcomes />

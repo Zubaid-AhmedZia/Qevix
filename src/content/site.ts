@@ -2,20 +2,20 @@ export const siteConfig = {
   name: "QevixAi",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://qevixai.com",
   description:
-    "QevixAi builds AI voice, messaging, booking, CRM, and workflow automation systems for businesses that run on calls.",
+    "QevixAi helps businesses answer leads, automate follow-ups, qualify prospects, and book more appointments 24/7 with an AI receptionist built around their workflow.",
   brandPromise:
-    "QevixAi helps businesses answer every call, follow up faster, book more appointments, and keep every workflow moving."
+    "QevixAi answers leads, follows up automatically, qualifies prospects, and books appointments 24/7."
 };
 
 export const heroContent = {
-  eyebrow: "AI-powered automation systems",
-  titlePrefix: "Every lead answered.",
-  titleAccent: "Every next step automated.",
+  eyebrow: "AI Receptionist & Follow-Up Automation",
+  titlePrefix: "Automate Follow-Ups, Book More Appointments,",
+  titleAccent: "and Save 20+ Hours Per Week",
   body:
-    "QevixAi connects voice agents, instant follow-up, CRM routing, booking flows, and visibility into one system built around your real customer journey.",
-  proof: ["24/7 call coverage", "Lead response in seconds", "Human-ready handoffs"],
-  primaryCta: "Book a demo",
-  secondaryCta: "Watch the automation"
+    "QevixAi answers leads, follows up automatically, qualifies prospects, and books appointments 24/7 so your team can focus on closing more business.",
+  proof: ["Instant lead response", "Appointment booking", "Automatic follow-ups", "24/7 availability"],
+  primaryCta: "Book a Free AI Audit",
+  secondaryCta: "See a Live Demo"
 };
 
 export const tickerItems = [
@@ -33,64 +33,55 @@ export const tickerItems = [
 
 export const automationServices = [
   {
-    title: "AI Voice Agents",
+    title: "Instant Lead Response",
     eyebrow: "Answer",
-    body:
-      "Pick up calls, ask the right intake questions, answer routine requests, and route complex conversations to your team with context.",
-    bullets: ["24/7 call handling", "Lead qualification", "Warm transfer rules"]
+    body: "Respond to calls, forms, and messages before prospects move on.",
+    bullets: ["Missed-call recovery", "Intake questions", "Urgent routing"]
   },
   {
-    title: "SMS and WhatsApp Follow-up",
-    eyebrow: "Recover",
-    body:
-      "Turn missed calls, abandoned enquiries, and unconfirmed appointments into structured follow-up sequences.",
-    bullets: ["Missed-call text back", "Booking reminders", "Reactivation prompts"]
+    title: "Automatic Follow-Ups",
+    eyebrow: "Follow up",
+    body: "Keep conversations alive without your team chasing every lead manually.",
+    bullets: ["SMS follow-up", "WhatsApp prompts", "Reminder flows"]
   },
   {
-    title: "CRM and Pipeline Automation",
-    eyebrow: "Organize",
-    body:
-      "Push captured details into the right stage, notify the right person, and keep leads from disappearing between tools.",
-    bullets: ["Lead routing", "Task creation", "Pipeline status updates"]
+    title: "Lead Qualification",
+    eyebrow: "Qualify",
+    body: "Ask the right questions and send cleaner opportunities to your team.",
+    bullets: ["Intent capture", "Job details", "Lead summaries"]
   },
   {
     title: "Appointment Booking",
-    eyebrow: "Schedule",
-    body:
-      "Collect service needs, preferred times, location, and contact details before confirming the next best appointment path.",
-    bullets: ["Booking rules", "Availability logic", "Confirmation summaries"]
+    eyebrow: "Book",
+    body: "Turn qualified enquiries into calendar bookings automatically.",
+    bullets: ["Booking rules", "Calendar path", "Confirmations"]
   },
   {
-    title: "Website and Funnel Automation",
-    eyebrow: "Convert",
-    body:
-      "Connect landing page forms, call prompts, and follow-up flows so every campaign has a clean conversion path.",
-    bullets: ["Lead forms", "CTA routing", "Scenario-based funnels"]
+    title: "Human Handoff",
+    eyebrow: "Route",
+    body: "Send urgent or high-value conversations to the right person fast.",
+    bullets: ["Escalation rules", "Team alerts", "Callback routing"]
   },
   {
-    title: "Reporting and Workflow Visibility",
-    eyebrow: "Improve",
-    body:
-      "Review call summaries, common questions, missed opportunities, and handoff quality so the system improves over time.",
-    bullets: ["Conversation summaries", "Team notifications", "Workflow insights"]
+    title: "Call Summaries",
+    eyebrow: "Summarize",
+    body: "Give your team clean notes so they know exactly what happened.",
+    bullets: ["Captured fields", "Next step", "CRM-ready notes"]
   }
 ];
 
 export const voiceAgentFeatures = [
   {
-    title: "Answers like a trained front desk",
-    body:
-      "The agent uses your hours, services, locations, policies, and routing rules instead of generic scripts."
+    title: "Answers missed calls instantly",
+    body: "QevixAi responds when your team is busy, closed, or already on another call."
   },
   {
-    title: "Knows when to stop",
-    body:
-      "Escalation rules define when to transfer, create a callback, or notify a person for sensitive calls."
+    title: "Books the next step",
+    body: "Qualified enquiries move toward an appointment, callback, or human handoff."
   },
   {
-    title: "Leaves a clean trail",
-    body:
-      "Every qualified call can produce a summary, captured fields, and the next action for your team."
+    title: "Keeps your team in control",
+    body: "You decide what gets answered, routed, summarized, or escalated."
   }
 ];
 
@@ -98,17 +89,17 @@ export const workflowOutcomes = [
   {
     value: 24,
     suffix: "/7",
-    label: "call coverage without adding another shift"
+    label: "lead response without another shift"
   },
   {
-    value: 6,
-    suffix: "",
-    label: "connected automation layers from call to CRM"
+    value: 20,
+    suffix: "+",
+    label: "hours saved per week target"
   },
   {
-    value: 3,
-    suffix: "",
-    label: "handoff paths: book, route, or callback"
+    value: 30,
+    suffix: "s",
+    label: "target response time"
   }
 ];
 
@@ -159,31 +150,56 @@ export const comparisonRows = [
 
 export const howItWorks = [
   {
-    title: "Map the customer journey",
-    body:
-      "Identify what should happen when someone calls, submits a form, asks a question, or needs a follow-up."
+    title: "Map Your Workflow",
+    body: "We learn how your business handles calls, leads, bookings, follow-ups, and handoffs."
   },
   {
-    title: "Build the automation stack",
-    body:
-      "Configure the voice agent, message flows, booking rules, CRM stages, and team notifications around your process."
+    title: "Build Your AI Receptionist",
+    body: "QevixAi is configured around your services, rules, calendar, and escalation process."
   },
   {
-    title: "Test real scenarios",
-    body:
-      "Run through common calls, edge cases, transfer moments, and appointment requests before the system goes live."
-  },
-  {
-    title: "Launch, review, and refine",
-    body:
-      "Use summaries and workflow insights to improve scripts, routing, handoffs, and follow-up over time."
+    title: "Save Time & Book More",
+    body: "Your team gets faster responses, cleaner leads, fewer repetitive calls, and more booked appointments."
   }
 ];
 
 export const controlFeatures = [
   "Business hours, service areas, and location rules",
-  "Escalation paths for urgent or sensitive calls",
-  "Caller summaries, transcript history, and captured fields",
-  "CRM stages, pipeline tasks, and team notifications",
-  "Follow-up timing for SMS and WhatsApp workflows"
+  "Escalation paths for urgent calls",
+  "Caller summaries and captured fields",
+  "CRM stages and team notifications",
+  "Follow-up timing for SMS and WhatsApp"
+];
+
+export const caseStudies = [
+  {
+    industry: "Roofing Company",
+    metrics: [
+      { label: "Response time", value: "3 hours -> 30 seconds" },
+      { label: "Appointments booked", value: "+42%" },
+      { label: "Manual calls reduced", value: "70%" }
+    ],
+    body:
+      "QevixAi responded to quote requests instantly, qualified job details, and helped book more inspection calls without manual chasing."
+  },
+  {
+    industry: "Medical Clinic",
+    metrics: [
+      { label: "Patient enquiry response", value: "Faster" },
+      { label: "Front-desk interruptions", value: "Reduced" },
+      { label: "After-hours requests", value: "Captured" }
+    ],
+    body:
+      "QevixAi handled routine patient enquiries, captured appointment requests, and routed urgent calls based on clinic rules."
+  },
+  {
+    industry: "Real Estate Team",
+    metrics: [
+      { label: "Lead qualification", value: "Faster" },
+      { label: "Buyer/seller follow-ups", value: "Automatic" },
+      { label: "Agent summaries", value: "Cleaner" }
+    ],
+    body:
+      "QevixAi qualified new property enquiries, scheduled calls, and helped agents focus on serious leads."
+  }
 ];

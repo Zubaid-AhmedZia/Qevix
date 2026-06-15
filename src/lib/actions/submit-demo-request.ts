@@ -35,7 +35,8 @@ export async function submitDemoRequest(
     properties: {
       plan: values.plan || "not-selected",
       industry: values.industry,
-      callVolume: values.callVolume
+      callVolume: values.callVolume,
+      mainGoal: values.mainGoal
     }
   });
 

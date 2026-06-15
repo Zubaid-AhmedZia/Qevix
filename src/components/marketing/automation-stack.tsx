@@ -19,11 +19,11 @@ export function AutomationStack() {
         <Reveal>
           <p className="section-kicker">Automation stack</p>
           <h2 className="section-heading">
-            Every lead gets a next step, not a dead end.
+            Stop Chasing Leads Manually
           </h2>
           <p className="section-lede">
-            Build the system around the whole journey: answer the call, continue the
-            conversation, route the lead, book the appointment, and keep the team informed.
+            QevixAi turns calls, forms, follow-ups, bookings, and summaries into one
+            responsive workflow.
           </p>
         </Reveal>
 

@@ -12,45 +12,45 @@ export type PricingPlan = {
 export const pricingPlans: PricingPlan[] = [
   {
     id: "starter",
-    name: "Starter AI System",
-    fit: "Fix the biggest leak first",
+    name: "Starter",
+    fit: "Answer missed leads",
     signal: "One core workflow",
     idealFor:
-      "For businesses that need one high-impact automation live fast: call answering, lead capture, booking, or callback routing.",
+      "For businesses ready to fix missed calls, lead capture, or appointment requests.",
     capabilities: [
-      "One primary voice or follow-up workflow",
-      "Approved intake prompts and business rules",
-      "Clean team handoff with summaries"
+      "AI receptionist workflow",
+      "Approved intake questions",
+      "Clean handoff summary"
     ],
-    support: "Launch review included"
+    support: "Launch review"
   },
   {
     id: "growth",
-    name: "Growth Infrastructure",
-    fit: "Connect the full lead journey",
+    name: "Growth",
+    fit: "Book more appointments",
     signal: "Voice + follow-up + CRM",
     idealFor:
-      "For teams ready to connect calls, messaging, booking logic, CRM stages, and team notifications into one operating system.",
+      "For teams that want calls, follow-ups, bookings, and pipeline updates connected.",
     capabilities: [
-      "AI voice agent plus SMS or WhatsApp flow",
-      "Pipeline routing and task automation",
-      "Expanded scenario testing before launch"
+      "AI voice plus follow-up",
+      "Booking and routing rules",
+      "Pipeline notifications"
     ],
     support: "Priority optimization",
     featured: true
   },
   {
     id: "multi-location",
-    name: "Full AI Ecosystem",
-    fit: "Scale across teams or locations",
+    name: "Multi-Location",
+    fit: "Standardize response",
     signal: "Multi-flow system",
     idealFor:
-      "For organizations that need consistent workflows across locations, service lines, campaign funnels, or larger operating teams.",
+      "For businesses with multiple locations, teams, campaigns, or service lines.",
     capabilities: [
-      "Multiple voice, booking, and follow-up paths",
-      "Location-aware routing and ownership rules",
-      "Cross-team visibility and system refinement"
+      "Multiple workflow paths",
+      "Location-aware routing",
+      "Cross-team visibility"
     ],
-    support: "Systems review included"
+    support: "Systems review"
   }
 ];
