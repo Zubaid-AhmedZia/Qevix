@@ -50,7 +50,7 @@ export function HeroAutomationScene() {
               alt=""
               width={2400}
               height={2400}
-              // sizes="(min-width: 1040px) 380px, 210px"
+              // sizes="(min-width: 1040px) 320px, 210px"
               priority
             />
           </div>

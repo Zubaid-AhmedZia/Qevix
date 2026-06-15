@@ -626,12 +626,14 @@ svg {
   z-index: 1;
   display: grid;
   min-height: 650px;
-  --hero-logo-size: clamp(240px, 20vw, 380px);
+  --hero-logo-size: clamp(220px, 18vw, 300px);
   --hero-logo-ratio: 1;
   --hero-logo-height: calc(var(--hero-logo-size) * var(--hero-logo-ratio));
   --logo-hover-shift: -32px;
-  --popup-card-gap: 28px;
-  --connector-length: clamp(80px, 6vw, 116px);
+  --popup-card-gap: clamp(20px, 2vw, 28px);
+  --hover-card-width: clamp(212px, 17vw, 242px);
+  --connector-length: clamp(34px, 4vw, 58px);
+  --hero-logo-x: 31%;
   place-items: center;
 }
 
@@ -2121,14 +2123,12 @@ svg {
     min-height: clamp(500px, 68vh, 620px);
     margin-inline: auto;
     overflow: visible;
-    --hero-visual-gap: clamp(78px, 6vw, 104px);
-    --connector-length: calc(var(--hero-visual-gap) + (var(--logo-hover-shift) * -1));
     display: block;
   }
 
   .hero-logo-node {
     position: absolute;
-    left: 50%;
+    left: var(--hero-logo-x);
     top: 50%;
     z-index: 1;
     transform: translate(-50%, -50%) rotate(0deg);
@@ -2140,7 +2140,10 @@ svg {
 
   .hero-hover-stack {
     position: absolute;
-    left: calc(50% + (var(--hero-logo-size) / 2) + var(--connector-length) + 20px);
+    left: min(
+      calc(var(--hero-logo-x) + (var(--hero-logo-size) / 2) + var(--connector-length) + 14px),
+      calc(100% - var(--hover-card-width))
+    );
     top: 50%;
     z-index: 2;
     display: flex;
@@ -2157,7 +2160,8 @@ svg {
   }
 
   .hero-hover-card {
-    min-width: 242px;
+    width: var(--hover-card-width);
+    min-width: 0;
     min-height: 78px;
     gap: 15px;
     padding: 16px 18px;
@@ -2482,6 +2486,67 @@ svg {
 
   .footer-grid {
     grid-template-columns: minmax(220px, 1.35fr) repeat(4, minmax(120px, 0.62fr));
+  }
+}
+
+@media (min-width: 1040px) and (max-width: 1179px) {
+  .header-inner {
+    display: flex;
+  }
+
+  .desktop-nav,
+  .header-ctas {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: inline-flex;
+  }
+
+  .mobile-drawer {
+    display: grid;
+  }
+}
+
+@media (min-width: 1180px) and (max-width: 1399px) {
+  .header-inner {
+    grid-template-columns: minmax(174px, 0.72fr) auto minmax(300px, 0.86fr);
+    padding-inline: 16px;
+    gap: 12px;
+  }
+
+  .desktop-nav {
+    gap: 12px;
+    font-size: 0.8rem;
+  }
+
+  .header-ctas {
+    gap: 7px;
+  }
+
+  .header-ctas .btn {
+    min-height: 40px;
+    padding: 9px 11px;
+    font-size: 0.8rem;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .qevix-logo-mark,
+  .brand-mark {
+    width: 54px;
+    height: 54px;
+  }
+
+  .brand-word span {
+    font-size: 0.92rem;
+  }
+
+  .brand-word small {
+    font-size: 0.48rem;
+    letter-spacing: 0.2em;
   }
 }
 
