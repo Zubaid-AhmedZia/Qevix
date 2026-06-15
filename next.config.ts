@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  poweredByHeader: false
+// next.config.ts
+const nextConfig = {
+  output: "export",
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
+// const nextConfig: NextConfig = {
+//   poweredByHeader: false
+// };
+
+// export default nextConfig;
