@@ -2,6 +2,23 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { siteConfig } from "@/content/site";
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  email: siteConfig.contact.email,
+  telephone: siteConfig.contact.telephone,
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      email: siteConfig.contact.email,
+      telephone: siteConfig.contact.telephone
+    }
+  ]
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -41,6 +58,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           dangerouslySetInnerHTML={{
             __html:
               "try{var t=localStorage.getItem('qevix-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}"
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd)
           }}
         />
         {children}

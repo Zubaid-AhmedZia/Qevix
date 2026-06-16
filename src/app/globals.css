@@ -1549,13 +1549,13 @@ svg {
   background:
     linear-gradient(135deg, rgba(122, 60, 255, 0.32), rgba(4, 217, 255, 0.13)),
     rgba(255, 255, 255, 0.07);
-  color: #fff;
+  color: var(--ink);
   padding: 46px;
   box-shadow: var(--shadow), var(--shadow-glow);
 }
 
 .outcome-panel .section-heading {
-  color: #fff;
+  color: var(--ink);
 }
 
 .outcome-list {
@@ -1574,7 +1574,7 @@ svg {
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.08);
   padding: 16px;
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--ink);
 }
 
 .outcome-item svg {

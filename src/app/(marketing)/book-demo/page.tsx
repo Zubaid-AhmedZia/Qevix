@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CalendarCheck, CheckCircle2 } from "lucide-react";
 import { DemoRequestForm } from "@/components/forms/demo-request-form";
+import { siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Book Your Free AI Audit",
@@ -17,7 +19,9 @@ export default function BookDemoPage() {
           <h1 className="section-heading">Book Your Free AI Audit</h1>
           <p className="section-lede">
             Tell us how your business handles calls, leads, appointments, and follow-ups.
-            We will recommend a practical AI receptionist workflow.
+            We will recommend a practical AI receptionist workflow. You can also email{" "}
+            <Link href={siteConfig.contact.emailHref}>{siteConfig.contact.email}</Link> or call{" "}
+            <Link href={siteConfig.contact.phoneHref}>{siteConfig.contact.phone}</Link>.
           </p>
 
           <ul className="control-list hero-actions">

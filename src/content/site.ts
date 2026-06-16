@@ -1,6 +1,13 @@
 export const siteConfig = {
   name: "QevixAi",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://qevixai.com",
+  contact: {
+    email: "info@qevixai.com",
+    emailHref: "mailto:info@qevixai.com",
+    phone: "+1 (469) 674-4576",
+    phoneHref: "tel:+14696744576",
+    telephone: "+14696744576"
+  },
   description:
     "QevixAi helps businesses answer leads, automate follow-ups, qualify prospects, and book more appointments 24/7 with an AI receptionist built around their workflow.",
   brandPromise:

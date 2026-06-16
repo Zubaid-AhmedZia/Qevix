@@ -9,6 +9,7 @@ import {
   type ContactErrors,
   type ContactValues
 } from "@/lib/validation/contact-schema";
+import { submitToWeb3Forms } from "@/lib/forms/web3forms";
 
 const topics = [
   "Get a custom automation plan",
@@ -33,10 +34,12 @@ export function ContactForm() {
   const [values, setValues] = useState<ContactValues>(initialValues);
   const [errors, setErrors] = useState<ContactErrors>({});
   const [message, setMessage] = useState<string>();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const nextValues = getContactValues(new FormData(event.currentTarget));
+    const formData = new FormData(event.currentTarget);
+    const nextValues = getContactValues(formData);
     const result = validateContact(nextValues);
 
     setValues(nextValues);
@@ -44,6 +47,29 @@ export function ContactForm() {
 
     if (!result.valid) {
       setMessage("Please fix the highlighted fields.");
+      return;
+    }
+
+    setMessage(undefined);
+    setIsSubmitting(true);
+
+    const submission = await submitToWeb3Forms({
+      subject: "QevixAi custom automation plan request",
+      fields: {
+        form_name: "Contact form",
+        name: nextValues.name,
+        email: nextValues.email,
+        company: nextValues.company,
+        topic: nextValues.topic,
+        message: nextValues.message,
+        botcheck: String(formData.get("botcheck") ?? "")
+      }
+    });
+
+    setIsSubmitting(false);
+
+    if (!submission.success) {
+      setMessage("Something went wrong. Please try again later.");
       return;
     }
 
@@ -57,6 +83,8 @@ export function ContactForm() {
           {message}
         </p>
       ) : null}
+
+      <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" hidden />
 
       <div className="field">
         <label htmlFor="name">Name</label>
@@ -150,7 +178,7 @@ export function ContactForm() {
         ) : null}
       </div>
 
-      <SubmitButton pendingLabel="Sending message...">
+      <SubmitButton pending={isSubmitting} pendingLabel="Sending message...">
         Get Your Custom Automation Plan
       </SubmitButton>
     </form>

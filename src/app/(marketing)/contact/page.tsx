@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { MessageSquare, ShieldCheck } from "lucide-react";
 import { ContactForm } from "@/components/forms/contact-form";
+import { siteConfig } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Get Your Custom Automation Plan",
@@ -16,7 +18,9 @@ export default function ContactPage() {
           <h1 className="section-heading">Get a Practical Plan for Your Workflow</h1>
           <p className="section-lede">
             Share what happens when leads call, message, book, or need follow-up. We will
-            recommend the next best workflow.
+            recommend the next best workflow. You can also email{" "}
+            <Link href={siteConfig.contact.emailHref}>{siteConfig.contact.email}</Link> or call{" "}
+            <Link href={siteConfig.contact.phoneHref}>{siteConfig.contact.phone}</Link>.
           </p>
 
           <ul className="control-list hero-actions">

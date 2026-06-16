@@ -9,6 +9,7 @@ import {
   type DemoRequestErrors,
   type DemoRequestValues
 } from "@/lib/validation/demo-request-schema";
+import { submitToWeb3Forms } from "@/lib/forms/web3forms";
 
 const industries = [
   "Medical clinic",
@@ -62,6 +63,7 @@ export function DemoRequestForm() {
   const [values, setValues] = useState<DemoRequestValues>(initialValues);
   const [errors, setErrors] = useState<DemoRequestErrors>({});
   const [message, setMessage] = useState<string>();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const plan = new URLSearchParams(window.location.search).get("plan") ?? "";
@@ -70,9 +72,10 @@ export function DemoRequestForm() {
     }
   }, []);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const nextValues = getDemoRequestValues(new FormData(event.currentTarget));
+    const formData = new FormData(event.currentTarget);
+    const nextValues = getDemoRequestValues(formData);
     const result = validateDemoRequest(nextValues);
 
     setValues(nextValues);
@@ -80,6 +83,35 @@ export function DemoRequestForm() {
 
     if (!result.valid) {
       setMessage("Please fix the highlighted fields.");
+      return;
+    }
+
+    setMessage(undefined);
+    setIsSubmitting(true);
+
+    const submission = await submitToWeb3Forms({
+      subject: "QevixAi free AI audit request",
+      fields: {
+        form_name: "Book demo / AI audit form",
+        name: nextValues.name,
+        email: nextValues.email,
+        phone: nextValues.phone,
+        company: nextValues.company,
+        website: nextValues.website,
+        industry: nextValues.industry,
+        call_volume: nextValues.callVolume,
+        main_goal: nextValues.mainGoal,
+        plan: nextValues.plan,
+        current_challenge: nextValues.currentChallenge,
+        message: nextValues.currentChallenge,
+        botcheck: String(formData.get("botcheck") ?? "")
+      }
+    });
+
+    setIsSubmitting(false);
+
+    if (!submission.success) {
+      setMessage("Something went wrong. Please try again later.");
       return;
     }
 
@@ -95,6 +127,7 @@ export function DemoRequestForm() {
       ) : null}
 
       <input type="hidden" name="plan" value={values.plan} />
+      <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" hidden />
 
       <div className="field">
         <label htmlFor="name">Full name</label>
@@ -257,7 +290,9 @@ export function DemoRequestForm() {
         ) : null}
       </div>
 
-      <SubmitButton pendingLabel="Sending request...">Request My Free AI Audit</SubmitButton>
+      <SubmitButton pending={isSubmitting} pendingLabel="Sending request...">
+        Request My Free AI Audit
+      </SubmitButton>
     </form>
   );
 }

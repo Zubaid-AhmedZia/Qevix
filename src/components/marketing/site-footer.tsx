@@ -12,7 +12,10 @@ export function SiteFooter() {
   }));
   const companyLinks = footerNav.filter((item) =>
     ["Book a Free AI Audit", "Get Your Custom Automation Plan"].includes(item.label)
-  );
+  ).concat([
+    { label: siteConfig.contact.email, href: siteConfig.contact.emailHref },
+    { label: siteConfig.contact.phone, href: siteConfig.contact.phoneHref }
+  ]);
   const legalLinks = footerNav.filter((item) => ["Privacy", "Terms"].includes(item.label));
   const productLinks = footerNav.filter(
     (item) =>
