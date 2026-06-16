@@ -1,11 +1,14 @@
 "use client";
 
-import { useActionState } from "react";
+import type { FormEvent } from "react";
+import { useState } from "react";
 import { SubmitButton } from "@/components/forms/submit-button";
 import {
-  submitContactRequest,
-  type ContactRequestState
-} from "@/lib/actions/submit-contact-request";
+  getContactValues,
+  validateContact,
+  type ContactErrors,
+  type ContactValues
+} from "@/lib/validation/contact-schema";
 
 const topics = [
   "Get a custom automation plan",
@@ -27,17 +30,31 @@ export function ContactForm() {
     topic: "",
     message: ""
   };
-  const initialState: ContactRequestState = {
-    values: initialValues
-  };
-  const [state, formAction] = useActionState(submitContactRequest, initialState);
-  const values = state.values ?? initialValues;
+  const [values, setValues] = useState<ContactValues>(initialValues);
+  const [errors, setErrors] = useState<ContactErrors>({});
+  const [message, setMessage] = useState<string>();
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const nextValues = getContactValues(new FormData(event.currentTarget));
+    const result = validateContact(nextValues);
+
+    setValues(nextValues);
+    setErrors(result.errors);
+
+    if (!result.valid) {
+      setMessage("Please fix the highlighted fields.");
+      return;
+    }
+
+    window.location.href = "/contact/success";
+  }
 
   return (
-    <form action={formAction} className="form-grid" noValidate>
-      {state.message ? (
+    <form className="form-grid" noValidate onSubmit={handleSubmit}>
+      {message ? (
         <p className="form-message" role="alert">
-          {state.message}
+          {message}
         </p>
       ) : null}
 
@@ -49,11 +66,11 @@ export function ContactForm() {
           autoComplete="name"
           defaultValue={values.name}
           required
-          aria-describedby={state.errors?.name ? errorId("name") : undefined}
+          aria-describedby={errors.name ? errorId("name") : undefined}
         />
-        {state.errors?.name ? (
+        {errors.name ? (
           <span className="field-error" id={errorId("name")}>
-            {state.errors.name}
+            {errors.name}
           </span>
         ) : null}
       </div>
@@ -67,11 +84,11 @@ export function ContactForm() {
           autoComplete="email"
           defaultValue={values.email}
           required
-          aria-describedby={state.errors?.email ? errorId("email") : undefined}
+          aria-describedby={errors.email ? errorId("email") : undefined}
         />
-        {state.errors?.email ? (
+        {errors.email ? (
           <span className="field-error" id={errorId("email")}>
-            {state.errors.email}
+            {errors.email}
           </span>
         ) : null}
       </div>
@@ -84,11 +101,11 @@ export function ContactForm() {
           autoComplete="organization"
           defaultValue={values.company}
           required
-          aria-describedby={state.errors?.company ? errorId("company") : undefined}
+          aria-describedby={errors.company ? errorId("company") : undefined}
         />
-        {state.errors?.company ? (
+        {errors.company ? (
           <span className="field-error" id={errorId("company")}>
-            {state.errors.company}
+            {errors.company}
           </span>
         ) : null}
       </div>
@@ -100,7 +117,7 @@ export function ContactForm() {
           name="topic"
           defaultValue={values.topic}
           required
-          aria-describedby={state.errors?.topic ? errorId("topic") : undefined}
+          aria-describedby={errors.topic ? errorId("topic") : undefined}
         >
           <option value="">Choose a topic</option>
           {topics.map((topic) => (
@@ -109,9 +126,9 @@ export function ContactForm() {
             </option>
           ))}
         </select>
-        {state.errors?.topic ? (
+        {errors.topic ? (
           <span className="field-error" id={errorId("topic")}>
-            {state.errors.topic}
+            {errors.topic}
           </span>
         ) : null}
       </div>
@@ -123,12 +140,12 @@ export function ContactForm() {
           name="message"
           defaultValue={values.message}
           required
-          aria-describedby={state.errors?.message ? errorId("message") : undefined}
+          aria-describedby={errors.message ? errorId("message") : undefined}
           placeholder="Share what you want to discuss."
         />
-        {state.errors?.message ? (
+        {errors.message ? (
           <span className="field-error" id={errorId("message")}>
-            {state.errors.message}
+            {errors.message}
           </span>
         ) : null}
       </div>

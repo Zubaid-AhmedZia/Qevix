@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/opengraph-image",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "QevixAi automation landing page"
+        alt: "QevixAi AI receptionist landing page"
       }
     ]
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "QevixAi - AI Receptionist That Books Appointments & Automates Follow-Ups",
     description: siteConfig.description,
-    images: ["/opengraph-image"]
+    images: ["/opengraph-image.png"]
   }
 };
 

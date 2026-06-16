@@ -14,23 +14,14 @@ export function MarketingAnalytics() {
       const name = element.dataset.event;
       if (!name) return;
 
-      const payload = JSON.stringify({
-        name,
-        properties: element.dataset.eventProperties
-          ? JSON.parse(element.dataset.eventProperties)
-          : undefined
-      });
-
-      if (navigator.sendBeacon) {
-        navigator.sendBeacon("/api/events", payload);
-      } else {
-        void fetch("/api/events", {
-          method: "POST",
-          body: payload,
-          headers: { "content-type": "application/json" },
-          keepalive: true
-        });
-      }
+      window.dispatchEvent(new CustomEvent("qevix-marketing-event", {
+        detail: {
+          name,
+          properties: element.dataset.eventProperties
+            ? JSON.parse(element.dataset.eventProperties)
+            : undefined
+        }
+      }));
     }
 
     document.addEventListener("click", handleClick);

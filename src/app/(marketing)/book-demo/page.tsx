@@ -8,17 +8,7 @@ export const metadata: Metadata = {
     "Request a free QevixAi audit for AI receptionist, follow-up, booking, and lead qualification workflows."
 };
 
-const validPlans = new Set(["starter", "growth", "multi-location"]);
-
-type PageProps = {
-  searchParams?: Promise<Record<string, string | string[] | undefined>>;
-};
-
-export default async function BookDemoPage({ searchParams }: PageProps) {
-  const params = (await searchParams) ?? {};
-  const rawPlan = Array.isArray(params.plan) ? params.plan[0] : params.plan;
-  const defaultPlan = rawPlan && validPlans.has(rawPlan) ? rawPlan : "";
-
+export default function BookDemoPage() {
   return (
     <main className="form-page">
       <div className="container form-layout">
@@ -49,7 +39,7 @@ export default async function BookDemoPage({ searchParams }: PageProps) {
             <CalendarCheck aria-hidden="true" size={16} />
             AI audit request
           </div>
-          <DemoRequestForm defaultPlan={defaultPlan} />
+          <DemoRequestForm />
         </div>
       </div>
     </main>

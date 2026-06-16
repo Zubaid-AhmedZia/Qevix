@@ -1,11 +1,14 @@
 "use client";
 
-import { useActionState } from "react";
+import type { FormEvent } from "react";
+import { useEffect, useState } from "react";
 import { SubmitButton } from "@/components/forms/submit-button";
 import {
-  submitDemoRequest,
-  type DemoRequestState
-} from "@/lib/actions/submit-demo-request";
+  getDemoRequestValues,
+  validateDemoRequest,
+  type DemoRequestErrors,
+  type DemoRequestValues
+} from "@/lib/validation/demo-request-schema";
 
 const industries = [
   "Medical clinic",
@@ -37,11 +40,13 @@ const mainGoals = [
   "Other"
 ];
 
+const validPlans = new Set(["starter", "growth", "multi-location"]);
+
 function errorId(name: string) {
   return `${name}-error`;
 }
 
-export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) {
+export function DemoRequestForm() {
   const initialValues = {
     name: "",
     email: "",
@@ -51,20 +56,41 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
     industry: "",
     callVolume: "",
     mainGoal: "",
-    plan: defaultPlan,
+    plan: "",
     currentChallenge: ""
   };
-  const initialState: DemoRequestState = {
-    values: initialValues
-  };
-  const [state, formAction] = useActionState(submitDemoRequest, initialState);
-  const values = state.values ?? initialValues;
+  const [values, setValues] = useState<DemoRequestValues>(initialValues);
+  const [errors, setErrors] = useState<DemoRequestErrors>({});
+  const [message, setMessage] = useState<string>();
+
+  useEffect(() => {
+    const plan = new URLSearchParams(window.location.search).get("plan") ?? "";
+    if (validPlans.has(plan)) {
+      setValues((current) => ({ ...current, plan }));
+    }
+  }, []);
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const nextValues = getDemoRequestValues(new FormData(event.currentTarget));
+    const result = validateDemoRequest(nextValues);
+
+    setValues(nextValues);
+    setErrors(result.errors);
+
+    if (!result.valid) {
+      setMessage("Please fix the highlighted fields.");
+      return;
+    }
+
+    window.location.href = "/book-demo/success";
+  }
 
   return (
-    <form action={formAction} className="form-grid" noValidate>
-      {state.message ? (
+    <form className="form-grid" noValidate onSubmit={handleSubmit}>
+      {message ? (
         <p className="form-message" role="alert">
-          {state.message}
+          {message}
         </p>
       ) : null}
 
@@ -78,11 +104,11 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
           autoComplete="name"
           defaultValue={values.name}
           required
-          aria-describedby={state.errors?.name ? errorId("name") : undefined}
+          aria-describedby={errors.name ? errorId("name") : undefined}
         />
-        {state.errors?.name ? (
+        {errors.name ? (
           <span className="field-error" id={errorId("name")}>
-            {state.errors.name}
+            {errors.name}
           </span>
         ) : null}
       </div>
@@ -96,11 +122,11 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
           autoComplete="email"
           defaultValue={values.email}
           required
-          aria-describedby={state.errors?.email ? errorId("email") : undefined}
+          aria-describedby={errors.email ? errorId("email") : undefined}
         />
-        {state.errors?.email ? (
+        {errors.email ? (
           <span className="field-error" id={errorId("email")}>
-            {state.errors.email}
+            {errors.email}
           </span>
         ) : null}
       </div>
@@ -124,11 +150,11 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
           autoComplete="organization"
           defaultValue={values.company}
           required
-          aria-describedby={state.errors?.company ? errorId("company") : undefined}
+          aria-describedby={errors.company ? errorId("company") : undefined}
         />
-        {state.errors?.company ? (
+        {errors.company ? (
           <span className="field-error" id={errorId("company")}>
-            {state.errors.company}
+            {errors.company}
           </span>
         ) : null}
       </div>
@@ -152,7 +178,7 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
           name="industry"
           defaultValue={values.industry}
           required
-          aria-describedby={state.errors?.industry ? errorId("industry") : undefined}
+          aria-describedby={errors.industry ? errorId("industry") : undefined}
         >
           <option value="">Select an industry</option>
           {industries.map((industry) => (
@@ -161,9 +187,9 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
             </option>
           ))}
         </select>
-        {state.errors?.industry ? (
+        {errors.industry ? (
           <span className="field-error" id={errorId("industry")}>
-            {state.errors.industry}
+            {errors.industry}
           </span>
         ) : null}
       </div>
@@ -175,7 +201,7 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
           name="callVolume"
           defaultValue={values.callVolume}
           required
-          aria-describedby={state.errors?.callVolume ? errorId("callVolume") : undefined}
+          aria-describedby={errors.callVolume ? errorId("callVolume") : undefined}
         >
           <option value="">Select call volume</option>
           {callVolumes.map((volume) => (
@@ -184,9 +210,9 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
             </option>
           ))}
         </select>
-        {state.errors?.callVolume ? (
+        {errors.callVolume ? (
           <span className="field-error" id={errorId("callVolume")}>
-            {state.errors.callVolume}
+            {errors.callVolume}
           </span>
         ) : null}
       </div>
@@ -198,7 +224,7 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
           name="mainGoal"
           defaultValue={values.mainGoal}
           required
-          aria-describedby={state.errors?.mainGoal ? errorId("mainGoal") : undefined}
+          aria-describedby={errors.mainGoal ? errorId("mainGoal") : undefined}
         >
           <option value="">Select main goal</option>
           {mainGoals.map((goal) => (
@@ -207,9 +233,9 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
             </option>
           ))}
         </select>
-        {state.errors?.mainGoal ? (
+        {errors.mainGoal ? (
           <span className="field-error" id={errorId("mainGoal")}>
-            {state.errors.mainGoal}
+            {errors.mainGoal}
           </span>
         ) : null}
       </div>
@@ -221,14 +247,12 @@ export function DemoRequestForm({ defaultPlan = "" }: { defaultPlan?: string }) 
           name="currentChallenge"
           defaultValue={values.currentChallenge}
           required
-          aria-describedby={
-            state.errors?.currentChallenge ? errorId("currentChallenge") : undefined
-          }
+          aria-describedby={errors.currentChallenge ? errorId("currentChallenge") : undefined}
           placeholder="Tell us what happens today when leads call, message, book, or need follow-up."
         />
-        {state.errors?.currentChallenge ? (
+        {errors.currentChallenge ? (
           <span className="field-error" id={errorId("currentChallenge")}>
-            {state.errors.currentChallenge}
+            {errors.currentChallenge}
           </span>
         ) : null}
       </div>
